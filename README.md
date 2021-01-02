@@ -4,6 +4,8 @@ Construction of IHGV transcripts from RNA-seq
 
 ### Installation
 
+* Operating System: Linux
+
 ```
 git clone https://github.com/Rashedul/CRIS
 cd CRIS
@@ -26,7 +28,6 @@ Usage: CRIS.sh -inbam <input_bam_file> -threads <num_threads> -memory <max_memor
                         <max_memory_assembly>: maximum memory in G (gigabyte) allowed for assembly; default 4GB
 ```
 
-
 ### Test run
 
 **NOTE:** bam file must be aligned to hg38 genome build, coordinate-sorted and indexed.
@@ -41,7 +42,6 @@ IGHV status for SRR1814049 (US-1422278) using Sanger sequencing:
 bash CRIS.sh -inbam SRR1814049_chr14_test.bam
 
 ```
-
 
 ### Output 
 
