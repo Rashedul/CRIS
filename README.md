@@ -51,7 +51,4 @@ bash CRIS.sh -inbam SRR1814049.bam.slice.bam
 
 ### License 
 
-```
 This project is licensed under the [MIT license](https://github.com/Rashedul/CRIS/blob/main/LICENSE).
-
-```
