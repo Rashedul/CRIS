@@ -1,0 +1,9 @@
+name: cris_env
+dependencies:
+  - picard==2.23.9
+  - trinity==2.11.0
+  - blast==2.10.1
+  - seqkit==0.14.0
+  - sailfish==0.10.1
+  - sambamba==0.7.1
+
