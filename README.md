@@ -29,23 +29,25 @@ Usage: CRIS.sh -inbam <input_bam_file> -threads <num_threads> -memory <max_memor
 
 ### Test run
 
-**NOTE:** bam file must be aligned to hg38 genome build, coordinate-sorted and indexed
+**NOTE:** bam file must be aligned to hg38 genome build, coordinate-sorted and indexed.
 
 Sanger output for SRR1814049 (US-1422278): IGHV gene: V3-74; percent identity: 94.6
 
 ```
 
-bash CRIS.sh -inbam SRR1814049.bam.slice.bam
+bash CRIS.sh -inbam SRR1814049_chr14_test.bam
 
 ```
 
 
 ### Output 
 
-```
-`file.bam.ig-transcripts.sortedbyTPM.fasta` contains Ig fasta sequences ordered by expression (TPM) values.
+Upload the Ig fasta file to [IgBlast](https://www.ncbi.nlm.nih.gov/igblast/) to get the percent identity between query and top germline V gene hit.
 
-`file.bam.ig-transcripts.sortedbyTPM.txt` contains Ig sequence IDs and expression values.
+```
+`SRR1814049_chr14_test.bam.ig-transcripts.sortedbyTPM.fasta` contains Ig fasta sequences ordered by expression (TPM) values. Upload this fasta file to IgBlast.
+
+`SRR1814049_chr14_test.bam.ig-transcripts.sortedbyTPM.txt` contains Ig sequence IDs and expression values.
 
 ```
 
