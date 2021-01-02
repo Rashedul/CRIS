@@ -33,7 +33,7 @@ Usage: CRIS.sh -inbam <input_bam_file> -threads <num_threads> -memory <max_memor
  
 IGHV status for SRR1814049 (US-1422278) using Sanger sequencing:
 
-* IGHV gene: V3-74
+* IGHV gene: IGHV3-74
 * Percent identity: 94.6
 
 ```
