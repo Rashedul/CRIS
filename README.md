@@ -37,7 +37,7 @@ IGHV status for SRR1814049 (US-1422278) using Sanger sequencing:
 * Percent identity: 94.6
 
 ```
-bash CRIS.sh -inbam SRR1814049_chr14_test.bam
+bash CRIS.sh -inbam SRR1814049_test.bam
 ```
 
 ### Output 
@@ -45,9 +45,9 @@ bash CRIS.sh -inbam SRR1814049_chr14_test.bam
 Upload the Ig fasta file to [IgBlast](https://www.ncbi.nlm.nih.gov/igblast/) to get the percent identity between query and top germline V gene hit.
 
 ```
-`SRR1814049_chr14_test.bam.ig-transcripts.sortedbyTPM.fasta` contains Ig fasta sequences ordered by expression (TPM) values. Upload this fasta file to IgBlast.
+`SRR1814049_test.bam.ig-transcripts.sortedbyTPM.fasta` contains Ig fasta sequences ordered by expression (TPM) values. Upload this fasta file to IgBlast.
 
-`SRR1814049_chr14_test.bam.ig-transcripts.sortedbyTPM.txt` contains Ig sequence IDs and expression values.
+`SRR1814049_test.bam.ig-transcripts.sortedbyTPM.txt` contains Ig sequence IDs and expression values.
 ```
 
 ### License 
