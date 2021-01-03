@@ -3,9 +3,9 @@ if [ "$1" == "-h" ] ; then
         echo -e "Construction of IHGV transcripts from RNA-seq.
 
 Usage: `basename $0` -inbam <input_bam_file> -threads <num_threads> -memory <max_memory_assembly>
-                        <input_bam_file>: bam file must be coordinate-sorted and indexed
+                        <input_bam_file>: bam file must be aligned to hg38 genome build, coordinate-sorted and indexed
                         <num_threads>: number of threads; default 4
-                        <max_memory_assembly>: maximum memory in G (gigabyte) allowed for assembly; default 4GB"
+                        <max_memory_assembly>: maximum memory in G (gigabyte) allowed for assembly; default 4G"
 exit 0
 fi
 
@@ -47,7 +47,7 @@ Trinity --seqType fq --max_memory $max_memory_assembly --left $input_bam_file.sl
 
 #######################################################################
 #  filter IGHV transcripts and identify highly expressed transcripts  #
-######################################################################
+#######################################################################
 
 printf "Filtering IGHV transcripts using blastn...\n\n"
 
@@ -70,9 +70,9 @@ less $input_bam_file"_blastn" | awk '!seen[$1]++' | awk '{print $1}' > $input_ba
 #filter transcript fasta file by transcript id
 less $f | seqkit grep -f $input_bam_file"_blastn_HG_IG_remdup.ID" > $input_bam_file"_blastn_HG_IG_remdup.ID.fa"
 
-printf "running sailfish...\n\n"
+printf "running sailfish to estimate transcript abundace...\n\n"
 
-#create sailfish index
+#create sailfish index 
 fa=$input_bam_file"_blastn_HG_IG_remdup.ID.fa"
 sailfish index -t $fa -o sailfish_index -k 25 -t $num_threads
 
@@ -83,12 +83,12 @@ less ./sailfish_index/quant.sf | sort -nr -k4 | grep -v "Name" | sed  '1i #Name 
 
 less $input_bam_file.ig-transcripts.sortedbyTPM.txt | awk '{print $1}' | grep -v "Name" >list
 
+#sort fasta file by transcript ids
 while read line; do
 less $f | seqkit grep -p $line;
 done <list >>$input_bam_file.ig-transcripts.sortedbyTPM.fasta
 
-printf "#### removing temporary files...\n\n"
-
+#remove temporary files
 rm -r sailfish_index
 rm IGHV* *slice* *_blastn* *.Trinity.fasta *bed list
 
