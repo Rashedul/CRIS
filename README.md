@@ -11,8 +11,9 @@ git clone https://github.com/Rashedul/CRIS
 cd CRIS
 
 conda env create --file environment.yml --force
-conda install -c bioconda/label/cf201901 sailfish
 source activate cris_env
+conda install -c bioconda/label/cf201901 sailfish
+
 ```
 
 ### Usage
