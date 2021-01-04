@@ -74,7 +74,7 @@ printf "running sailfish to estimate transcript abundace...\n\n"
 
 #create sailfish index 
 fa=$input_bam_file"_blastn_HG_IG_remdup.ID.fa"
-sailfish index -t $fa -o sailfish_index -k 25 -t $num_threads
+sailfish index -t $fa -o sailfish_index -k 25 -p $num_threads
 
 sailfish quant -i sailfish_index -l "OSR"  -1 $input_bam_file.slice.R1.fastq -2 $input_bam_file.slice.R2.fastq -o sailfish_index -p $num_threads
 

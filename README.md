@@ -11,6 +11,7 @@ git clone https://github.com/Rashedul/CRIS
 cd CRIS
 
 conda env create --file environment.yml --force
+conda install -c bioconda/label/cf201901 sailfish
 source activate cris_env
 ```
 
@@ -29,7 +30,7 @@ Usage: CRIS.sh -inbam <input_bam_file> -threads <num_threads> -memory <max_memor
 
 ### Test run
 
-**NOTE:** bam file must be aligned to hg38 genome build, coordinate-sorted and indexed.
+**NOTE:** bam file must be aligned to the hg38 genome build, coordinate-sorted and indexed. This pipeline is tested on BWA alignment of RNA-seq reads to the hg38 genome build.
  
 IGHV status for SRR1814049 (US-1422278) using Sanger sequencing:
 
