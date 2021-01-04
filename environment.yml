@@ -5,4 +5,5 @@ dependencies:
   - blast==2.10.1
   - seqkit==0.14.0
   - sambamba==0.7.1
+  - salmon==0.8.1
 

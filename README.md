@@ -13,7 +13,6 @@ cd CRIS
 conda env create --file environment.yml --force
 source activate cris_env
 conda install -c bioconda/label/cf201901 sailfish
-
 ```
 
 ### Usage
@@ -26,7 +25,7 @@ Construction of IHGV transcripts from RNA-seq.
 Usage: CRIS.sh -inbam <input_bam_file> -threads <num_threads> -memory <max_memory_assembly>
                         <input_bam_file>: bam file must be aligned to hg38 genome build, coordinate-sorted and indexed
                         <num_threads>: number of threads; default 4
-                        <max_memory_assembly>: maximum memory in G (gigabyte) allowed for assembly; default 4GB
+                        <max_memory_assembly>: maximum memory in G (gigabyte) allowed for assembly; default 4G
 ```
 
 ### Test run
