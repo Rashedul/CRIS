@@ -99,16 +99,19 @@ done
 
 #vdjer
 cd /projects/epigenomics3/epigenomics3_results/users/rislam/CLL_hg38/IGHV_status_RNAseq/RNAseq17samples_Blachly_PNAS/bam_star/
+wget https://github.com/mozack/vdjer/releases/download/v0.10_reference/vdjer_human_references.tar.gz
+tar -xvf vdjer_human_references.tar
+
+#vdjer --in star.sort.bam --t 8 --ins 175 --chain IGH --ref-dir vdjer_human_references/igh > vdjer.sam
+vdjer --in SRR1814049Aligned.out.sorted.bam --t 8 --ins 175 --chain IGH --ref-dir igh > vdjer.sam
 
 
-
-#test sailfish
+#test salmon
 cd /projects/epigenomics3/epigenomics3_results/users/rislam/CLL_hg38/IGHV_status_RNAseq/RNAseq17samples_Blachly_PNAS/bam/test_run/CRIS/CRIS.SRR1814049_test.bam
 salmon index -t SRR1814049_test.bam_blastn_HG_IG_remdup.ID.fa -i salmon_index -k 25 -p 8
 
 salmon quant -i salmon_index -l "OSR" -1 SRR1814049_test.bam.slice.R1.fastq -2 SRR1814049_test.bam.slice.R2.fastq -o transcripts_quant
 
-salmon quant -i transcripts_index -l <LIBTYPE> -1 reads1.fq -2 reads2.fq --validateMappings -o transcripts_quant
 
 
 
