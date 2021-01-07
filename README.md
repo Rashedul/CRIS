@@ -2,7 +2,18 @@
 
 Construction of IHGV transcripts from RNA-seq
 
-### Installation
+### Dependencies
+
+```
+  - picard
+  - trinity
+  - blast
+  - seqkit
+  - sambamba
+  - salmon
+```
+
+### Installation of dependencies
 
 * Operating System: Linux
 
@@ -53,3 +64,8 @@ Upload the Ig fasta file to [IgBlast](https://www.ncbi.nlm.nih.gov/igblast/) to 
 ### License 
 
 This project is licensed under the [MIT license](https://github.com/Rashedul/CRIS/blob/main/LICENSE).
+
+### Contact 
+
+Rashedul Islam (rashed1 (at) student.ubc.ca)
+
