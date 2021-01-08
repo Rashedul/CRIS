@@ -74,10 +74,8 @@ printf "\n\n running salmon to estimate transcript abundace...\n\n"
 
 #create sailfish index 
 fa=$input_bam_file"_blastn_HG_IG_remdup.ID.fa"
-#sailfish index -t $fa -o sailfish_index -k 25 -p $num_threads
 salmon index -t $fa -i salmon_index -k 25 -p $num_threads
 
-#sailfish quant -i sailfish_index -l "OSR"  -1 $input_bam_file.slice.R1.fastq -2 $input_bam_file.slice.R2.fastq -o sailfish_index -p $num_threads
 salmon quant -i salmon_index -l "OSR" -1 $input_bam_file.slice.R1.fastq -2 $input_bam_file.slice.R2.fastq -o salmon_index
 
 #sort transcript ids by tpm values
@@ -92,6 +90,6 @@ done <list >>$input_bam_file.ig-transcripts.sortedbyTPM.fasta
 
 #remove temporary files
 rm -r salmon_index
-rm IGHV* *slice* *_blastn* *.Trinity.fasta *bed list
+rm IGHV* *slice* *_blastn* *.Trinity.fasta *bed list *gene_trans_map
 
 printf "#### finished job...\n\n"

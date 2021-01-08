@@ -1,4 +1,8 @@
 name: cris_env
+channels:
+  - defaults
+  - bioconda
+  - conda-forge
 dependencies:
   - picard==2.23.9
   - trinity==2.11.0
@@ -6,4 +10,3 @@ dependencies:
   - seqkit==0.14.0
   - sambamba==0.7.1
   - salmon==1.4.0
-
