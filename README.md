@@ -1,6 +1,6 @@
 ### CRIS: Complete Reconstruction of Immunoglobulin V-D-J Sequences from RNA-seq 
 
-Complete Reconstruction of IGHV Sequences to identify somatic hypermutation status in chronic lymphocytic leukemia using RNA-seq
+CRIS reconstructs entire IGHV gene to identify somatic hypermutation status in chronic lymphocytic leukemia using RNA-seq. CRIS has been validated against PCR-Sanger based clinical data for somatic hypermutations in CLL.
 
 * Operating System: Linux
 
@@ -57,10 +57,11 @@ bash CRIS.sh -inbam SRR1814049_test.bam
 ### Output files
 
 ```
-`SRR1814049_test.bam.ig-transcripts.sortedbyTPM.fasta` contains Ig fasta sequences ordered by expression (TPM) values. Upload this fasta file to IgBlast.
+`SRR1814049_test.bam.ig-transcripts.sortedbyTPM.fasta` contains Ig-transcript fasta sequences ordered by expression (TPM) values. 
 
-`SRR1814049_test.bam.ig-transcripts.sortedbyTPM.txt` contains Ig sequence IDs and expression values.
-`SRR1814049_test.bam..IgBLAST_out.txt` contains the percent identity between Ig-transcript and top germline V gene hit.
+`SRR1814049_test.bam.ig-transcripts.sortedbyTPM.txt` contains Ig-transcript sequence IDs and expression values.
+
+`SRR1814049_test.bam..IgBLAST_out.txt` contains the percent identity and alignment between Ig-transcript and top germline V gene hit.
 ```
 
 ### License 
