@@ -1,21 +1,24 @@
 ### CRIS: Complete Reconstruction of Immunoglobulin V-D-J Sequences from RNA-seq 
 
-Construction of IHGV transcripts from RNA-seq
+Complete Reconstruction of IGHV Sequences to identify somatic hypermutation status in chronic lymphocytic leukemia using RNA-seq
+
+* Operating System: Linux
 
 ### Dependencies
 
 ```
-  - picard
-  - trinity
-  - blast
-  - seqkit
-  - sambamba
-  - salmon
+  - picard (v2.20.3)
+  - trinity (v2.1.1)
+  - blast (v2.9.0)
+  - seqkit (v0.12.0)
+  - sambamba (v0.7.0)
+  - salmon (v0.8.1)
+  - igblast (v1.14.0)
 ```
 
-### Installation of dependencies
+Executables must be accessible from user's PATH. CRIS has been tested on the software versions indicated.
 
-* Operating System: Linux
+### Installation of dependencies using conda
 
 ```
 git clone https://github.com/Rashedul/CRIS
@@ -51,14 +54,13 @@ IGHV status for SRR1814049 (US-1422278) using Sanger sequencing:
 bash CRIS.sh -inbam SRR1814049_test.bam
 ```
 
-### Output 
-
-Upload the Ig fasta file to [IgBlast](https://www.ncbi.nlm.nih.gov/igblast/) to get the percent identity between query and top germline V gene hit.
+### Output files
 
 ```
 `SRR1814049_test.bam.ig-transcripts.sortedbyTPM.fasta` contains Ig fasta sequences ordered by expression (TPM) values. Upload this fasta file to IgBlast.
 
 `SRR1814049_test.bam.ig-transcripts.sortedbyTPM.txt` contains Ig sequence IDs and expression values.
+`SRR1814049_test.bam..IgBLAST_out.txt` contains the percent identity between Ig-transcript and top germline V gene hit.
 ```
 
 ### License 

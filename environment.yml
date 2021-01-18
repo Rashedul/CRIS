@@ -10,3 +10,4 @@ dependencies:
   - seqkit==0.14.0
   - sambamba==0.7.1
   - salmon==1.4.0
+  - igblast==1.15.0

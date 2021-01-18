@@ -26,7 +26,7 @@ done
 # Slice bam; PE bam to fastq; de novo assembly of transcripts #
 ###############################################################
 
-mkdir CRIS.$input_bam_file
+mkdir -p CRIS.$input_bam_file
 cd CRIS.$input_bam_file
 
 #hg38 ig coordinates
@@ -46,20 +46,28 @@ printf "Trinity is constructing de novo transcripts...\n\n"
 Trinity --seqType fq --max_memory $max_memory_assembly --left $input_bam_file.slice.R1.fastq --right $input_bam_file.slice.R2.fastq --CPU $num_threads --trimmomatic --full_cleanup;
 
 #######################################################################
+#  make blast db for ighv sequences  #
+#######################################################################
+
+# download germline IGHV sequences
+curl -O http://www.imgt.org/download/V-QUEST/IMGT_V-QUEST_reference_directory/Homo_sapiens/IG/IGHV.fasta
+curl -O http://www.imgt.org/download/V-QUEST/IMGT_V-QUEST_reference_directory/Homo_sapiens/IG/IGHD.fasta
+curl -O http://www.imgt.org/download/V-QUEST/IMGT_V-QUEST_reference_directory/Homo_sapiens/IG/IGHJ.fasta
+
+# modify IMGT fasta files
+less IGHV.fasta | sed -e '/^[^>]/s/[^ATGCatgc]//g' >IGHV_edited.fasta # remove . with empty string
+less IGHD.fasta | awk '{print $1}' IGHD.fasta >IGHD_edited.fasta # remove ||| from Ids
+
+#make balst database
+makeblastdb -in IGHV_edited.fasta -dbtype nucl -parse_seqids -out IGHV
+makeblastdb -in IGHD_edited.fasta -dbtype nucl -parse_seqids -out IGHD
+makeblastdb -in IGHJ.fasta -dbtype nucl -parse_seqids -out IGHJ
+
+#######################################################################
 #  filter IGHV transcripts and identify highly expressed transcripts  #
 #######################################################################
 
 printf "Filtering IGHV transcripts using blastn...\n\n"
-
-# download germline IGHV sequences
-wget http://www.imgt.org/download/V-QUEST/IMGT_V-QUEST_reference_directory/Homo_sapiens/IG/IGHV.fasta
-curl -O http://www.imgt.org/download/V-QUEST/IMGT_V-QUEST_reference_directory/Homo_sapiens/IG/IGHV.fasta
-
-#replace periods with Ns
-less IGHV.fasta | sed -e '/^[^>]/s/[^ATGCatgc]/N/g' >IGHV_N.fasta
-
-#make balst database
-makeblastdb -in IGHV_N.fasta -dbtype nucl -parse_seqids -out IGHV
 
 #filter IGHV sequnces by blastn 
 f=*Trinity.fasta
@@ -88,8 +96,14 @@ while read line; do
 less $f | seqkit grep -p $line;
 done <list >>$input_bam_file.ig-transcripts.sortedbyTPM.fasta
 
+# add igblastn
+igblastn -germline_db_V IGHV -num_alignments_V 1 -germline_db_J IGHJ -num_alignments_J 1 -germline_db_D IGHD -num_alignments_D 1 -organism human -query $input_bam_file.ig-transcripts.sortedbyTPM.fasta -show_translation >$input_bam_file.IgBLAST_out.txt
+#igblastn -germline_db_V IGHV -germline_db_J IGHJ -germline_db_D IGHD -organism human -query SRR1814049.bam.ig-transcripts.sortedbyTPM.fasta -show_translation
+#default "-outfmt 3". "-outfmt 7" provides the table and does not show alignment 
+# out says clonotypes = 0
+
 #remove temporary files
 rm -r salmon_index
-rm IGHV* *slice* *_blastn* *.Trinity.fasta *bed list *gene_trans_map
+rm IGH* *slice* *_blastn* *.Trinity.fasta *bed list *gene_trans_map
 
 printf "#### finished job...\n\n"
