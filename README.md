@@ -4,6 +4,13 @@ CRIS reconstructs entire *IGHV* gene to identify somatic hypermutation status in
 
 * Operating System: Linux
 
+### Download the repository
+
+```
+git clone https://github.com/Rashedul/CRIS
+cd CRIS
+```
+
 ### Dependencies
 
 ```
@@ -21,9 +28,6 @@ Executables must be accessible from user's PATH. CRIS has been tested on the sof
 ### Installation of dependencies using conda
 
 ```
-git clone https://github.com/Rashedul/CRIS
-cd CRIS
-
 conda env create --file environment.yml --force
 conda activate cris_env
 ```
