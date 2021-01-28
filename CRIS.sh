@@ -26,8 +26,8 @@ done
 # Slice bam; PE bam to fastq; de novo assembly of transcripts #
 ###############################################################
 
-mkdir -p CRIS.$input_bam_file
-cd CRIS.$input_bam_file
+mkdir -p CRIS_out.$input_bam_file
+cd CRIS_out.$input_bam_file
 
 #hg38 ig coordinates
 echo "chr14   105600001       106880000
@@ -42,14 +42,14 @@ picard SamToFastq I=$input_bam_file.slice.bam F=$input_bam_file.slice.R1.fastq F
 
 printf "Trinity is constructing de novo transcripts...\n\n"
 
-#trinity
+#trinity de novo assembly
 Trinity --seqType fq --max_memory $max_memory_assembly --left $input_bam_file.slice.R1.fastq --right $input_bam_file.slice.R2.fastq --CPU $num_threads --trimmomatic --full_cleanup;
 
 #######################################################################
-#  make blast db for ighv sequences  #
+#                  make blast db for igh sequences                    #
 #######################################################################
 
-# download germline IGHV sequences
+# download germline IGHV sequences from IMGT
 curl -O http://www.imgt.org/download/V-QUEST/IMGT_V-QUEST_reference_directory/Homo_sapiens/IG/IGHV.fasta
 curl -O http://www.imgt.org/download/V-QUEST/IMGT_V-QUEST_reference_directory/Homo_sapiens/IG/IGHD.fasta
 curl -O http://www.imgt.org/download/V-QUEST/IMGT_V-QUEST_reference_directory/Homo_sapiens/IG/IGHJ.fasta
@@ -58,10 +58,6 @@ curl -O http://www.imgt.org/download/V-QUEST/IMGT_V-QUEST_reference_directory/Ho
 ../edit_imgt_file.pl IGHV.fasta > formatted_IGHV.fasta
 ../edit_imgt_file.pl IGHD.fasta > formatted_IGHD.fasta
 ../edit_imgt_file.pl IGHJ.fasta > formatted_IGHJ.fasta
-
-# # modify IMGT fasta files
-# less IGHV.fasta | sed -e '/^[^>]/s/[^ATGCatgc]//g' >IGHV_edited.fasta # remove . with empty string
-# less IGHD.fasta | awk '{print $1}' IGHD.fasta >IGHD_edited.fasta # remove ||| from Ids
 
 #make balst database
 makeblastdb -in formatted_IGHV.fasta -dbtype nucl -parse_seqids -out IGHV
@@ -85,15 +81,13 @@ less $f | seqkit grep -f $input_bam_file"_blastn_HG_IG_remdup.ID" > $input_bam_f
 
 printf "\n\n running salmon to estimate transcript abundace...\n\n"
 
-#create sailfish index 
+#create sailfish index and quantify transcript abundances
 fa=$input_bam_file"_blastn_HG_IG_remdup.ID.fa"
 salmon index -t $fa -i salmon_index -k 25 -p $num_threads
-
 salmon quant -i salmon_index -l "OSR" -1 $input_bam_file.slice.R1.fastq -2 $input_bam_file.slice.R2.fastq -o salmon_index
 
 #sort transcript ids by tpm values
 less ./salmon_index/quant.sf | sort -nr -k4 | grep -v "Name" | sed  '1i #Name    Length  EffectiveLength TPM     NumReads' >$input_bam_file.ig-transcripts.sortedbyTPM.txt
-
 less $input_bam_file.ig-transcripts.sortedbyTPM.txt | awk '{print $1}' | grep -v "Name" >list
 
 #sort fasta file by transcript ids
@@ -103,12 +97,9 @@ done <list >>$input_bam_file.ig-transcripts.sortedbyTPM.fasta
 
 # igblastn for SHM and clonotypes
 igblastn -germline_db_V IGHV -num_alignments_V 1 -germline_db_J IGHJ -num_alignments_J 1 -germline_db_D IGHD -num_alignments_D 1 -organism human -query $input_bam_file.ig-transcripts.sortedbyTPM.fasta -show_translation -auxiliary_data ../human_gl.aux >$input_bam_file.IgBLAST_out.txt
-#igblastn -germline_db_V IGHV -germline_db_J IGHJ -germline_db_D IGHD -organism human -query SRR1814049.bam.ig-transcripts.sortedbyTPM.fasta -show_translation
-#default "-outfmt 3". "-outfmt 7" provides the table and does not show alignment 
-# out says clonotypes = 0
 
 #remove temporary files
 rm -r salmon_index
-rm IGH* *slice* *_blastn* *.Trinity.fasta *bed list *gene_trans_map
+rm IGH* *slice* *_blastn* *.Trinity.fasta *bed list formatted*
 
 printf "#### finished job...\n\n"
