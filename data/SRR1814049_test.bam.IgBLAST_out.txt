@@ -1,0 +1,807 @@
+Database: formatted_IGHV.fasta; formatted_IGHD.fasta; formatted_IGHJ.fasta
+           463 sequences; 120,679 total letters
+
+
+
+Query= TRINITY_DN54_c1_g3_i2 len=3243 path=[29382:0-289 29383:290-313
+29570:314-795 29371:796-819 29538:820-850 29606:851-874
+29587:875-1059 29533:1060-1177 29622:1178-1187 29618:1188-1211
+29604:1212-1263 29468:1264-1306 @29561@!:1307-1635 29426:1636-1654
+29615:1655-1680 29602:1681-1778 29526:1779-1809 29626:1810-1848
+29625:1849-1872 29621:1873-1948 29630:1949-1952 29345:1953-1976
+29550:1977-2187 29191:2188-2211 29609:2212-2259 29633:2260-2279
+29572:2280-2299 29545:2300-2350 29513:2351-2481 29457:2482-2505
+29608:2506-2555 29571:2556-2604 29543:2605-2638 29635:2639-2666
+29432:2667-3242] [-1, 29382, 29383, 29570, 29371, 29538, 29606,
+29587, 29533, 29622, 29618, 29604, 29468, 29561, 29426, 29615,
+29602, 29526, 29626, 29625, 29621, 29630, 29345, 29550, 29191,
+29609, 29633, 29572, 29545, 29513, 29457, 29608, 29571, 29543,
+29635, 29432, -2]
+
+Length=3243
+                                                                                                      Score        E
+Sequences producing significant alignments:                                                          (Bits)     Value
+
+IGHV3-74*01                                                                                           413        1e-116
+IGHD5-18*01                                                                                           21.8       0.47  
+IGHJ6*02                                                                                              96.8       1e-23 
+
+
+Domain classification requested: imgt
+
+
+Note that your query represents the minus strand of a V gene and has been converted to the plus strand. The sequence positions refer to the converted sequence. 
+
+V-(D)-J rearrangement summary for query sequence (Top V gene match, Top D gene match, Top J gene match, Chain type, stop codon, V-J frame, Productive, Strand).  Multiple equivalent top matches, if present, are separated by a comma.
+IGHV3-74*01	IGHD5-18*01	IGHJ6*02	VH	No	In-frame	Yes	-
+
+V-(D)-J junction details based on top germline gene matches (V end, V-D junction, D region, D-J junction, J start).  Note that possible overlapping nucleotides at VDJ junction (i.e, nucleotides that could be assigned to either rearranging gene) are indicated in parentheses (i.e., (TACT)) but are not included under the V, D, or J gene itself
+AGAGA	TGCCCCCGGGGGGAC	GTGGATACTGCAATGGATAC	CTCCCGCTCACG	ACTAC	
+
+Sub-region sequence details (nucleotide sequence, translation, start, end)
+CDR3	GCAAGAGATGCCCCCGGGGGGACGTGGATACTGCAATGGATACCTCCCGCTCACGACTACGGTATGGACGTC	ARDAPGGTWILQWIPPAHDYGMDV	522	593	
+
+Alignment summary between query and top germline V gene hit (from, to, length, matches, mismatches, gaps, percent identity)
+FR1-IMGT	234	308	75	71	4	0	94.7
+CDR1-IMGT	309	332	24	21	3	0	87.5
+FR2-IMGT	333	383	51	50	1	0	98
+CDR2-IMGT	384	407	24	23	1	0	95.8
+FR3-IMGT	408	521	114	107	7	0	93.9
+CDR3-IMGT (germline)	522	529	8	8	0	0	100
+Total	N/A	N/A	296	280	16	0	94.6
+
+
+Alignments
+
+                                               <--------------------------------FR1-IMGT---------------------------------><-------CDR1-IM
+                                                E  V  Q  L  V  Q  S  G  G  G  S  V  Q  P  G  G  S  L  R  L  S  C  A  A  S  G  F  T  F  R 
+                    lcl|Query_1_reversed  234  GAGGTGCAACTGGTGCAGTCCGGGGGAGGCTCAGTTCAGCCGGGGGGGTCCCTGAGACTCTCCTGTGCAGCCTCTGGATTCACCTTCAGG  323
+V  94.6% (280/296)  IGHV3-74*01           1    ........G......G...............T.........T...............................................T  90
+                                                E  V  Q  L  V  E  S  G  G  G  L  V  Q  P  G  G  S  L  R  L  S  C  A  A  S  G  F  T  F  S 
+
+                                               GT------><--------------------FR2-IMGT---------------------><-------CDR2-IMGT------><-----
+                                                S  Y  W  M  H  W  V  R  Q  V  P  G  K  G  L  V  W  V  S  R  I  N  S  D  G  S  I  T  N  Y 
+                    lcl|Query_1_reversed  324  AGTTATTGGATGCACTGGGTCCGCCAAGTTCCAGGGAAGGGGCTGGTGTGGGTCTCACGTATTAATAGTGATGGGAGTATCACAAACTAC  413
+V  94.6% (280/296)  IGHV3-74*01           91   ..C..C......................C..................................................G.....G....  180
+                                                S  Y  W  M  H  W  V  R  Q  A  P  G  K  G  L  V  W  V  S  R  I  N  S  D  G  S  S  T  S  Y 
+
+                                               -----------------------------------------------FR3-IMGT-----------------------------------
+                                                A  D  S  V  K  G  R  F  S  I  S  R  D  N  A  K  N  T  L  Y  L  Q  M  K  S  L  R  V  E  D 
+                    lcl|Query_1_reversed  414  GCGGACTCCGTGAAGGGCCGATTCAGCATCTCCAGAGACAACGCCAAGAACACACTGTATCTACAAATGAAGAGTCTGAGAGTCGAGGAC  503
+V  94.6% (280/296)  IGHV3-74*01           181  .........................C...........................G........G........C..........C.......  270
+                                                A  D  S  V  K  G  R  F  T  I  S  R  D  N  A  K  N  T  L  Y  L  Q  M  N  S  L  R  A  E  D 
+
+                                               -----------------><-------------------------------CDR3-IMGT------------------------------>
+                                                T  A  V  Y  Y  C  A  R  D  A  P  G  G  T  W  I  L  Q  W  I  P  P  A  H  D  Y  G  M  D  V 
+                    lcl|Query_1_reversed  504  ACGGCTGTGTATTATTGTGCAAGAGATGCCCCCGGGGGGACGTGGATACTGCAATGGATACCTCCCGCTCACGACTACGGTATGGACGTC  593
+V  94.6% (280/296)  IGHV3-74*01           271  ..............C...........----------------------------------------------------------------  296
+                                                T  A  V  Y  Y  C  A  R                                                                   
+D  85.0% (17/20)    IGHD5-18*01           1    -----------------------------------------........A..T....T...-----------------------------  20
+J  100.0% (50/50)   IGHJ6*02              13   -------------------------------------------------------------------------.................  29
+
+                                               <-----------FR4-IMGT------------>
+                                                W  G  Q  G  T  T  V  T  V  S  S 
+                    lcl|Query_1_reversed  594  TGGGGCCAAGGGACCACGGTCACCGTCTCCTCA  626
+J  100.0% (50/50)   IGHJ6*02              30   .................................  62
+
+
+Lambda      K        H
+    1.10    0.333    0.549 
+
+Gapped
+Lambda      K        H
+    1.08    0.280    0.540 
+
+Effective search space used: 340096276
+
+
+Query= TRINITY_DN54_c1_g2_i5 len=4196 path=[29405:0-386 29406:387-408
+@29620@!:409-1685 29590:1686-1706 29632:1707-1719 29596:1720-1751
+29578:1752-1797 29552:1798-1890 29519:1891-1962 29256:1963-1986
+29576:1987-2010 29610:2011-2034 29549:2035-2384 29593:2385-2812
+29386:2813-2867 29547:2868-3590 29634:3591-3591 29637:3592-3619
+29214:3620-4195] [-1, 29405, 29406, 29620, 29590, 29632, 29596,
+29578, 29552, 29519, 29256, 29576, 29610, 29549, 29593, 29386,
+29547, 29634, 29637, 29214, -2]
+
+Length=4196
+                                                                                                      Score        E
+Sequences producing significant alignments:                                                          (Bits)     Value
+
+IGHV3-74*01                                                                                           413        2e-116
+IGHD5-18*01                                                                                           21.8       0.61  
+IGHJ6*02                                                                                              96.8       2e-23 
+
+
+Domain classification requested: imgt
+
+
+Note that your query represents the minus strand of a V gene and has been converted to the plus strand. The sequence positions refer to the converted sequence. 
+
+V-(D)-J rearrangement summary for query sequence (Top V gene match, Top D gene match, Top J gene match, Chain type, stop codon, V-J frame, Productive, Strand).  Multiple equivalent top matches, if present, are separated by a comma.
+IGHV3-74*01	IGHD5-18*01	IGHJ6*02	VH	No	In-frame	Yes	-
+
+V-(D)-J junction details based on top germline gene matches (V end, V-D junction, D region, D-J junction, J start).  Note that possible overlapping nucleotides at VDJ junction (i.e, nucleotides that could be assigned to either rearranging gene) are indicated in parentheses (i.e., (TACT)) but are not included under the V, D, or J gene itself
+AGAGA	TGCCCCCGGGGGGAC	GTGGATACTGCAATGGATAC	CTCCCGCTCACG	ACTAC	
+
+Sub-region sequence details (nucleotide sequence, translation, start, end)
+CDR3	GCAAGAGATGCCCCCGGGGGGACGTGGATACTGCAATGGATACCTCCCGCTCACGACTACGGTATGGACGTC	ARDAPGGTWILQWIPPAHDYGMDV	522	593	
+
+Alignment summary between query and top germline V gene hit (from, to, length, matches, mismatches, gaps, percent identity)
+FR1-IMGT	234	308	75	71	4	0	94.7
+CDR1-IMGT	309	332	24	21	3	0	87.5
+FR2-IMGT	333	383	51	50	1	0	98
+CDR2-IMGT	384	407	24	23	1	0	95.8
+FR3-IMGT	408	521	114	107	7	0	93.9
+CDR3-IMGT (germline)	522	529	8	8	0	0	100
+Total	N/A	N/A	296	280	16	0	94.6
+
+
+Alignments
+
+                                               <--------------------------------FR1-IMGT---------------------------------><-------CDR1-IM
+                                                E  V  Q  L  V  Q  S  G  G  G  S  V  Q  P  G  G  S  L  R  L  S  C  A  A  S  G  F  T  F  R 
+                    lcl|Query_2_reversed  234  GAGGTGCAACTGGTGCAGTCCGGGGGAGGCTCAGTTCAGCCGGGGGGGTCCCTGAGACTCTCCTGTGCAGCCTCTGGATTCACCTTCAGG  323
+V  94.6% (280/296)  IGHV3-74*01           1    ........G......G...............T.........T...............................................T  90
+                                                E  V  Q  L  V  E  S  G  G  G  L  V  Q  P  G  G  S  L  R  L  S  C  A  A  S  G  F  T  F  S 
+
+                                               GT------><--------------------FR2-IMGT---------------------><-------CDR2-IMGT------><-----
+                                                S  Y  W  M  H  W  V  R  Q  V  P  G  K  G  L  V  W  V  S  R  I  N  S  D  G  S  I  T  N  Y 
+                    lcl|Query_2_reversed  324  AGTTATTGGATGCACTGGGTCCGCCAAGTTCCAGGGAAGGGGCTGGTGTGGGTCTCACGTATTAATAGTGATGGGAGTATCACAAACTAC  413
+V  94.6% (280/296)  IGHV3-74*01           91   ..C..C......................C..................................................G.....G....  180
+                                                S  Y  W  M  H  W  V  R  Q  A  P  G  K  G  L  V  W  V  S  R  I  N  S  D  G  S  S  T  S  Y 
+
+                                               -----------------------------------------------FR3-IMGT-----------------------------------
+                                                A  D  S  V  K  G  R  F  S  I  S  R  D  N  A  K  N  T  L  Y  L  Q  M  K  S  L  R  V  E  D 
+                    lcl|Query_2_reversed  414  GCGGACTCCGTGAAGGGCCGATTCAGCATCTCCAGAGACAACGCCAAGAACACACTGTATCTACAAATGAAGAGTCTGAGAGTCGAGGAC  503
+V  94.6% (280/296)  IGHV3-74*01           181  .........................C...........................G........G........C..........C.......  270
+                                                A  D  S  V  K  G  R  F  T  I  S  R  D  N  A  K  N  T  L  Y  L  Q  M  N  S  L  R  A  E  D 
+
+                                               -----------------><-------------------------------CDR3-IMGT------------------------------>
+                                                T  A  V  Y  Y  C  A  R  D  A  P  G  G  T  W  I  L  Q  W  I  P  P  A  H  D  Y  G  M  D  V 
+                    lcl|Query_2_reversed  504  ACGGCTGTGTATTATTGTGCAAGAGATGCCCCCGGGGGGACGTGGATACTGCAATGGATACCTCCCGCTCACGACTACGGTATGGACGTC  593
+V  94.6% (280/296)  IGHV3-74*01           271  ..............C...........----------------------------------------------------------------  296
+                                                T  A  V  Y  Y  C  A  R                                                                   
+D  85.0% (17/20)    IGHD5-18*01           1    -----------------------------------------........A..T....T...-----------------------------  20
+J  100.0% (50/50)   IGHJ6*02              13   -------------------------------------------------------------------------.................  29
+
+                                               <-----------FR4-IMGT------------>
+                                                W  G  Q  G  T  T  V  T  V  S  S 
+                    lcl|Query_2_reversed  594  TGGGGCCAAGGGACCACGGTCACCGTCTCCTCA  626
+J  100.0% (50/50)   IGHJ6*02              30   .................................  62
+
+
+Lambda      K        H
+    1.10    0.333    0.549 
+
+Gapped
+Lambda      K        H
+    1.08    0.280    0.540 
+
+Effective search space used: 441034224
+
+
+Query= TRINITY_DN54_c1_g2_i6 len=6337 path=[29228:0-386 29624:387-2549
+@29620@!:2550-3826 29590:3827-3847 29632:3848-3860 29596:3861-3892
+29578:3893-3938 29552:3939-4031 29519:4032-4103 29256:4104-4127
+29576:4128-4151 29610:4152-4175 29549:4176-4525 29593:4526-4953
+29386:4954-5008 29547:5009-5731 29634:5732-5732 29637:5733-5760
+29214:5761-6336] [-1, 29228, 29624, 29620, 29590, 29632, 29596,
+29578, 29552, 29519, 29256, 29576, 29610, 29549, 29593, 29386,
+29547, 29634, 29637, 29214, -2]
+
+Length=6337
+                                                                                                      Score        E
+Sequences producing significant alignments:                                                          (Bits)     Value
+
+IGHV3-74*01                                                                                           413        3e-116
+IGHD5-18*01                                                                                           21.8       0.92  
+IGHJ6*02                                                                                              96.8       2e-23 
+
+
+Domain classification requested: imgt
+
+
+Note that your query represents the minus strand of a V gene and has been converted to the plus strand. The sequence positions refer to the converted sequence. 
+
+V-(D)-J rearrangement summary for query sequence (Top V gene match, Top D gene match, Top J gene match, Chain type, stop codon, V-J frame, Productive, Strand).  Multiple equivalent top matches, if present, are separated by a comma.
+IGHV3-74*01	IGHD5-18*01	IGHJ6*02	VH	No	In-frame	Yes	-
+
+V-(D)-J junction details based on top germline gene matches (V end, V-D junction, D region, D-J junction, J start).  Note that possible overlapping nucleotides at VDJ junction (i.e, nucleotides that could be assigned to either rearranging gene) are indicated in parentheses (i.e., (TACT)) but are not included under the V, D, or J gene itself
+AGAGA	TGCCCCCGGGGGGAC	GTGGATACTGCAATGGATAC	CTCCCGCTCACG	ACTAC	
+
+Sub-region sequence details (nucleotide sequence, translation, start, end)
+CDR3	GCAAGAGATGCCCCCGGGGGGACGTGGATACTGCAATGGATACCTCCCGCTCACGACTACGGTATGGACGTC	ARDAPGGTWILQWIPPAHDYGMDV	522	593	
+
+Alignment summary between query and top germline V gene hit (from, to, length, matches, mismatches, gaps, percent identity)
+FR1-IMGT	234	308	75	71	4	0	94.7
+CDR1-IMGT	309	332	24	21	3	0	87.5
+FR2-IMGT	333	383	51	50	1	0	98
+CDR2-IMGT	384	407	24	23	1	0	95.8
+FR3-IMGT	408	521	114	107	7	0	93.9
+CDR3-IMGT (germline)	522	529	8	8	0	0	100
+Total	N/A	N/A	296	280	16	0	94.6
+
+
+Alignments
+
+                                               <--------------------------------FR1-IMGT---------------------------------><-------CDR1-IM
+                                                E  V  Q  L  V  Q  S  G  G  G  S  V  Q  P  G  G  S  L  R  L  S  C  A  A  S  G  F  T  F  R 
+                    lcl|Query_3_reversed  234  GAGGTGCAACTGGTGCAGTCCGGGGGAGGCTCAGTTCAGCCGGGGGGGTCCCTGAGACTCTCCTGTGCAGCCTCTGGATTCACCTTCAGG  323
+V  94.6% (280/296)  IGHV3-74*01           1    ........G......G...............T.........T...............................................T  90
+                                                E  V  Q  L  V  E  S  G  G  G  L  V  Q  P  G  G  S  L  R  L  S  C  A  A  S  G  F  T  F  S 
+
+                                               GT------><--------------------FR2-IMGT---------------------><-------CDR2-IMGT------><-----
+                                                S  Y  W  M  H  W  V  R  Q  V  P  G  K  G  L  V  W  V  S  R  I  N  S  D  G  S  I  T  N  Y 
+                    lcl|Query_3_reversed  324  AGTTATTGGATGCACTGGGTCCGCCAAGTTCCAGGGAAGGGGCTGGTGTGGGTCTCACGTATTAATAGTGATGGGAGTATCACAAACTAC  413
+V  94.6% (280/296)  IGHV3-74*01           91   ..C..C......................C..................................................G.....G....  180
+                                                S  Y  W  M  H  W  V  R  Q  A  P  G  K  G  L  V  W  V  S  R  I  N  S  D  G  S  S  T  S  Y 
+
+                                               -----------------------------------------------FR3-IMGT-----------------------------------
+                                                A  D  S  V  K  G  R  F  S  I  S  R  D  N  A  K  N  T  L  Y  L  Q  M  K  S  L  R  V  E  D 
+                    lcl|Query_3_reversed  414  GCGGACTCCGTGAAGGGCCGATTCAGCATCTCCAGAGACAACGCCAAGAACACACTGTATCTACAAATGAAGAGTCTGAGAGTCGAGGAC  503
+V  94.6% (280/296)  IGHV3-74*01           181  .........................C...........................G........G........C..........C.......  270
+                                                A  D  S  V  K  G  R  F  T  I  S  R  D  N  A  K  N  T  L  Y  L  Q  M  N  S  L  R  A  E  D 
+
+                                               -----------------><-------------------------------CDR3-IMGT------------------------------>
+                                                T  A  V  Y  Y  C  A  R  D  A  P  G  G  T  W  I  L  Q  W  I  P  P  A  H  D  Y  G  M  D  V 
+                    lcl|Query_3_reversed  504  ACGGCTGTGTATTATTGTGCAAGAGATGCCCCCGGGGGGACGTGGATACTGCAATGGATACCTCCCGCTCACGACTACGGTATGGACGTC  593
+V  94.6% (280/296)  IGHV3-74*01           271  ..............C...........----------------------------------------------------------------  296
+                                                T  A  V  Y  Y  C  A  R                                                                   
+D  85.0% (17/20)    IGHD5-18*01           1    -----------------------------------------........A..T....T...-----------------------------  20
+J  100.0% (50/50)   IGHJ6*02              13   -------------------------------------------------------------------------.................  29
+
+                                               <-----------FR4-IMGT------------>
+                                                W  G  Q  G  T  T  V  T  V  S  S 
+                    lcl|Query_3_reversed  594  TGGGGCCAAGGGACCACGGTCACCGTCTCCTCA  626
+J  100.0% (50/50)   IGHJ6*02              30   .................................  62
+
+
+Lambda      K        H
+    1.10    0.333    0.549 
+
+Gapped
+Lambda      K        H
+    1.08    0.280    0.540 
+
+Effective search space used: 665135040
+
+
+Query= TRINITY_DN54_c1_g2_i3 len=3306 path=[29230:0-46 29628:47-47
+29619:48-78 29605:79-258 29629:259-282 29617:283-287 29603:288-311
+29584:312-550 29560:551-584 29528:585-621 29390:622-645
+29614:646-726 29600:727-787 29581:788-816 29632:817-829
+29597:830-861 29579:862-907 29551:908-1000 29519:1001-1072
+29256:1073-1096 29576:1097-1120 29610:1121-1144 29549:1145-1494
+29593:1495-1922 29386:1923-1977 29547:1978-2700 29634:2701-2701
+29637:2702-2729 29214:2730-3305] [-1, 29230, 29628, 29619, 29605,
+29629, 29617, 29603, 29584, 29560, 29528, 29390, 29614, 29600,
+29581, 29632, 29597, 29579, 29551, 29519, 29256, 29576, 29610,
+29549, 29593, 29386, 29547, 29634, 29637, 29214, -2]
+
+Length=3306
+                                                                                                      Score        E
+Sequences producing significant alignments:                                                          (Bits)     Value
+
+IGHV3-74*01                                                                                           413        1e-116
+IGHD5-18*01                                                                                           21.8       0.48  
+IGHJ6*02                                                                                              96.8       1e-23 
+
+
+Domain classification requested: imgt
+
+
+Note that your query represents the minus strand of a V gene and has been converted to the plus strand. The sequence positions refer to the converted sequence. 
+
+V-(D)-J rearrangement summary for query sequence (Top V gene match, Top D gene match, Top J gene match, Chain type, stop codon, V-J frame, Productive, Strand).  Multiple equivalent top matches, if present, are separated by a comma.
+IGHV3-74*01	IGHD5-18*01	IGHJ6*02	VH	No	In-frame	Yes	-
+
+V-(D)-J junction details based on top germline gene matches (V end, V-D junction, D region, D-J junction, J start).  Note that possible overlapping nucleotides at VDJ junction (i.e, nucleotides that could be assigned to either rearranging gene) are indicated in parentheses (i.e., (TACT)) but are not included under the V, D, or J gene itself
+AGAGA	TGCCCCCGGGGGGAC	GTGGATACTGCAATGGATAC	CTCCCGCTCACG	ACTAC	
+
+Sub-region sequence details (nucleotide sequence, translation, start, end)
+CDR3	GCAAGAGATGCCCCCGGGGGGACGTGGATACTGCAATGGATACCTCCCGCTCACGACTACGGTATGGACGTC	ARDAPGGTWILQWIPPAHDYGMDV	522	593	
+
+Alignment summary between query and top germline V gene hit (from, to, length, matches, mismatches, gaps, percent identity)
+FR1-IMGT	234	308	75	71	4	0	94.7
+CDR1-IMGT	309	332	24	21	3	0	87.5
+FR2-IMGT	333	383	51	50	1	0	98
+CDR2-IMGT	384	407	24	23	1	0	95.8
+FR3-IMGT	408	521	114	107	7	0	93.9
+CDR3-IMGT (germline)	522	529	8	8	0	0	100
+Total	N/A	N/A	296	280	16	0	94.6
+
+
+Alignments
+
+                                               <--------------------------------FR1-IMGT---------------------------------><-------CDR1-IM
+                                                E  V  Q  L  V  Q  S  G  G  G  S  V  Q  P  G  G  S  L  R  L  S  C  A  A  S  G  F  T  F  R 
+                    lcl|Query_4_reversed  234  GAGGTGCAACTGGTGCAGTCCGGGGGAGGCTCAGTTCAGCCGGGGGGGTCCCTGAGACTCTCCTGTGCAGCCTCTGGATTCACCTTCAGG  323
+V  94.6% (280/296)  IGHV3-74*01           1    ........G......G...............T.........T...............................................T  90
+                                                E  V  Q  L  V  E  S  G  G  G  L  V  Q  P  G  G  S  L  R  L  S  C  A  A  S  G  F  T  F  S 
+
+                                               GT------><--------------------FR2-IMGT---------------------><-------CDR2-IMGT------><-----
+                                                S  Y  W  M  H  W  V  R  Q  V  P  G  K  G  L  V  W  V  S  R  I  N  S  D  G  S  I  T  N  Y 
+                    lcl|Query_4_reversed  324  AGTTATTGGATGCACTGGGTCCGCCAAGTTCCAGGGAAGGGGCTGGTGTGGGTCTCACGTATTAATAGTGATGGGAGTATCACAAACTAC  413
+V  94.6% (280/296)  IGHV3-74*01           91   ..C..C......................C..................................................G.....G....  180
+                                                S  Y  W  M  H  W  V  R  Q  A  P  G  K  G  L  V  W  V  S  R  I  N  S  D  G  S  S  T  S  Y 
+
+                                               -----------------------------------------------FR3-IMGT-----------------------------------
+                                                A  D  S  V  K  G  R  F  S  I  S  R  D  N  A  K  N  T  L  Y  L  Q  M  K  S  L  R  V  E  D 
+                    lcl|Query_4_reversed  414  GCGGACTCCGTGAAGGGCCGATTCAGCATCTCCAGAGACAACGCCAAGAACACACTGTATCTACAAATGAAGAGTCTGAGAGTCGAGGAC  503
+V  94.6% (280/296)  IGHV3-74*01           181  .........................C...........................G........G........C..........C.......  270
+                                                A  D  S  V  K  G  R  F  T  I  S  R  D  N  A  K  N  T  L  Y  L  Q  M  N  S  L  R  A  E  D 
+
+                                               -----------------><-------------------------------CDR3-IMGT------------------------------>
+                                                T  A  V  Y  Y  C  A  R  D  A  P  G  G  T  W  I  L  Q  W  I  P  P  A  H  D  Y  G  M  D  V 
+                    lcl|Query_4_reversed  504  ACGGCTGTGTATTATTGTGCAAGAGATGCCCCCGGGGGGACGTGGATACTGCAATGGATACCTCCCGCTCACGACTACGGTATGGACGTC  593
+V  94.6% (280/296)  IGHV3-74*01           271  ..............C...........----------------------------------------------------------------  296
+                                                T  A  V  Y  Y  C  A  R                                                                   
+D  85.0% (17/20)    IGHD5-18*01           1    -----------------------------------------........A..T....T...-----------------------------  20
+J  100.0% (50/50)   IGHJ6*02              13   -------------------------------------------------------------------------.................  29
+
+                                               <-----------FR4-IMGT------------>
+                                                W  G  Q  G  T  T  V  T  V  S  S 
+                    lcl|Query_4_reversed  594  TGGGGCCAAGGGACCACGGTCACCGTCTCCTCA  626
+J  100.0% (50/50)   IGHJ6*02              30   .................................  62
+
+
+Lambda      K        H
+    1.10    0.333    0.549 
+
+Gapped
+Lambda      K        H
+    1.08    0.280    0.540 
+
+Effective search space used: 346768984
+
+
+Query= TRINITY_DN54_c1_g1_i1 len=643 path=[29295:0-37 29296:38-38
+29297:39-66 29298:67-642] [-1, 29295, 29296, 29297, 29298, -2]
+
+Length=643
+                                                                                                      Score        E
+Sequences producing significant alignments:                                                          (Bits)     Value
+
+IGHV3-74*01                                                                                           413        3e-117
+IGHD5-18*01                                                                                           21.8       0.11  
+IGHJ6*02                                                                                              96.8       3e-24 
+
+
+Domain classification requested: imgt
+
+
+Note that your query represents the minus strand of a V gene and has been converted to the plus strand. The sequence positions refer to the converted sequence. 
+
+V-(D)-J rearrangement summary for query sequence (Top V gene match, Top D gene match, Top J gene match, Chain type, stop codon, V-J frame, Productive, Strand).  Multiple equivalent top matches, if present, are separated by a comma.
+IGHV3-74*01	IGHD5-18*01	IGHJ6*02	VH	No	In-frame	Yes	-
+
+V-(D)-J junction details based on top germline gene matches (V end, V-D junction, D region, D-J junction, J start).  Note that possible overlapping nucleotides at VDJ junction (i.e, nucleotides that could be assigned to either rearranging gene) are indicated in parentheses (i.e., (TACT)) but are not included under the V, D, or J gene itself
+AGAGA	TGCCCCCGGGGGGAC	GTGGATACTGCAATGGATAC	CTCCCGCTCACG	ACTAC	
+
+Sub-region sequence details (nucleotide sequence, translation, start, end)
+CDR3	GCAAGAGATGCCCCCGGGGGGACGTGGATACTGCAATGGATACCTCCCGCTCACGACTACGGTATGGACGTC	ARDAPGGTWILQWIPPAHDYGMDV	522	593	
+
+Alignment summary between query and top germline V gene hit (from, to, length, matches, mismatches, gaps, percent identity)
+FR1-IMGT	234	308	75	71	4	0	94.7
+CDR1-IMGT	309	332	24	21	3	0	87.5
+FR2-IMGT	333	383	51	50	1	0	98
+CDR2-IMGT	384	407	24	23	1	0	95.8
+FR3-IMGT	408	521	114	107	7	0	93.9
+CDR3-IMGT (germline)	522	529	8	8	0	0	100
+Total	N/A	N/A	296	280	16	0	94.6
+
+
+Alignments
+
+                                               <--------------------------------FR1-IMGT---------------------------------><-------CDR1-IM
+                                                E  V  Q  L  V  Q  S  G  G  G  S  V  Q  P  G  G  S  L  R  L  S  C  A  A  S  G  F  T  F  R 
+                    lcl|Query_5_reversed  234  GAGGTGCAACTGGTGCAGTCCGGGGGAGGCTCAGTTCAGCCGGGGGGGTCCCTGAGACTCTCCTGTGCAGCCTCTGGATTCACCTTCAGG  323
+V  94.6% (280/296)  IGHV3-74*01           1    ........G......G...............T.........T...............................................T  90
+                                                E  V  Q  L  V  E  S  G  G  G  L  V  Q  P  G  G  S  L  R  L  S  C  A  A  S  G  F  T  F  S 
+
+                                               GT------><--------------------FR2-IMGT---------------------><-------CDR2-IMGT------><-----
+                                                S  Y  W  M  H  W  V  R  Q  V  P  G  K  G  L  V  W  V  S  R  I  N  S  D  G  S  I  T  N  Y 
+                    lcl|Query_5_reversed  324  AGTTATTGGATGCACTGGGTCCGCCAAGTTCCAGGGAAGGGGCTGGTGTGGGTCTCACGTATTAATAGTGATGGGAGTATCACAAACTAC  413
+V  94.6% (280/296)  IGHV3-74*01           91   ..C..C......................C..................................................G.....G....  180
+                                                S  Y  W  M  H  W  V  R  Q  A  P  G  K  G  L  V  W  V  S  R  I  N  S  D  G  S  S  T  S  Y 
+
+                                               -----------------------------------------------FR3-IMGT-----------------------------------
+                                                A  D  S  V  K  G  R  F  S  I  S  R  D  N  A  K  N  T  L  Y  L  Q  M  K  S  L  R  V  E  D 
+                    lcl|Query_5_reversed  414  GCGGACTCCGTGAAGGGCCGATTCAGCATCTCCAGAGACAACGCCAAGAACACACTGTATCTACAAATGAAGAGTCTGAGAGTCGAGGAC  503
+V  94.6% (280/296)  IGHV3-74*01           181  .........................C...........................G........G........C..........C.......  270
+                                                A  D  S  V  K  G  R  F  T  I  S  R  D  N  A  K  N  T  L  Y  L  Q  M  N  S  L  R  A  E  D 
+
+                                               -----------------><-------------------------------CDR3-IMGT------------------------------>
+                                                T  A  V  Y  Y  C  A  R  D  A  P  G  G  T  W  I  L  Q  W  I  P  P  A  H  D  Y  G  M  D  V 
+                    lcl|Query_5_reversed  504  ACGGCTGTGTATTATTGTGCAAGAGATGCCCCCGGGGGGACGTGGATACTGCAATGGATACCTCCCGCTCACGACTACGGTATGGACGTC  593
+V  94.6% (280/296)  IGHV3-74*01           271  ..............C...........----------------------------------------------------------------  296
+                                                T  A  V  Y  Y  C  A  R                                                                   
+D  85.0% (17/20)    IGHD5-18*01           1    -----------------------------------------........A..T....T...-----------------------------  20
+J  100.0% (50/50)   IGHJ6*02              13   -------------------------------------------------------------------------.................  29
+
+                                               <-----------FR4-IMGT------------>
+                                                W  G  Q  G  T  T  V  T  V  S  S 
+                    lcl|Query_5_reversed  594  TGGGGCCAAGGGACCACGGTCACCGTCTCCTCA  626
+J  100.0% (50/50)   IGHJ6*02              30   .................................  62
+
+
+Lambda      K        H
+    1.10    0.333    0.549 
+
+Gapped
+Lambda      K        H
+    1.08    0.280    0.540 
+
+Effective search space used: 66137100
+
+
+Query= TRINITY_DN68_c0_g1_i1 len=834 path=[812:0-833] [-1, 812, -2]
+
+Length=834
+                                                                                                      Score        E
+Sequences producing significant alignments:                                                          (Bits)     Value
+
+IGHV5-78*01                                                                                           453        2e-129
+IGHD3-10*01                                                                                           14.1       27    
+IGHJ5*01                                                                                              14.1       25    
+
+
+Domain classification requested: imgt
+
+
+Note that your query represents the minus strand of a V gene and has been converted to the plus strand. The sequence positions refer to the converted sequence. 
+
+V-(D)-J rearrangement summary for query sequence (Top V gene match, Top D gene match, Top J gene match, Chain type, stop codon, V-J frame, Productive, Strand).  Multiple equivalent top matches, if present, are separated by a comma.
+IGHV5-78*01	IGHD3-10*01	IGHJ5*01	VH	Yes	Out-of-frame	No	-
+
+V-(D)-J junction details based on top germline gene matches (V end, V-D junction, D region, D-J junction, J start).  Note that possible overlapping nucleotides at VDJ junction (i.e, nucleotides that could be assigned to either rearranging gene) are indicated in parentheses (i.e., (TACT)) but are not included under the V, D, or J gene itself
+TGAGA	GGGACCATCTAAAACCTTCCGCGGTGCAGGTGCAGAGTGAGCTGCCAGACACACCCTCCCCAGGGGCCTCTCTATTCATC	CGGGGAG	GAAACACTGGCTGTTTGTGTCCTCAGGAGCAAAAACCAGAGAACAACATGGGAGCGTTCCTAACCCCTAAGG	CAACT	
+
+Sub-region sequence details (nucleotide sequence, translation, start, end)
+CDR3	GTGAGAGGGACCATCTAAAACCTTCCGCGGTGCAGGTGCAGAGTGAGCTGCCAGACACACCCTCCCCAGGGGCCTCTCTATTCATCCGGGGAGGAAACACTGGCTGTTTGTGTCCTCAGGAGCAAAAACCAGAGAACAACATGGGAGCGTTCCTAACCCCTAAGGCAACTGG	VRGTI*NLPRCRCRVSCQTHPPQGPLYSSGEETLAVCVLRSKNQRTTWERS*PLRQL	420	591	
+
+Alignment summary between query and top germline V gene hit (from, to, length, matches, mismatches, gaps, percent identity)
+FR1-IMGT	132	206	75	75	0	0	100
+CDR1-IMGT	207	230	24	24	0	0	100
+FR2-IMGT	231	281	51	50	1	0	98
+CDR2-IMGT	282	305	24	24	0	0	100
+FR3-IMGT	306	419	114	113	1	0	99.1
+CDR3-IMGT (germline)	420	425	6	6	0	0	100
+Total	N/A	N/A	294	292	2	0	99.3
+
+
+Alignments
+
+                                               <--------------------------------FR1-IMGT---------------------------------><-------CDR1-IM
+                                                E  V  Q  L  L  Q  S  A  A  E  V  K  R  P  G  E  S  L  R  I  S  C  K  T  S  G  Y  S  F  T 
+                    lcl|Query_6_reversed  132  GAGGTGCAGCTGTTGCAGTCTGCAGCAGAGGTGAAAAGACCCGGGGAGTCTCTGAGGATCTCCTGTAAGACTTCTGGATACAGCTTTACC  221
+V  99.3% (292/294)  IGHV5-78*01           1    ..........................................................................................  90
+                                                E  V  Q  L  L  Q  S  A  A  E  V  K  R  P  G  E  S  L  R  I  S  C  K  T  S  G  Y  S  F  T 
+
+                                               GT------><--------------------FR2-IMGT---------------------><-------CDR2-IMGT------><-----
+                                                S  Y  W  I  H  W  V  R  Q  M  P  G  K  Q  L  E  W  M  G  S  I  Y  P  G  N  S  D  T  T  Y 
+                    lcl|Query_6_reversed  222  AGCTACTGGATCCACTGGGTGCGCCAGATGCCCGGGAAACAACTGGAGTGGATGGGGAGCATCTATCCTGGGAACTCTGATACCACATAC  311
+V  99.3% (292/294)  IGHV5-78*01           91   .......................................G.............................................G....  180
+                                                S  Y  W  I  H  W  V  R  Q  M  P  G  K  E  L  E  W  M  G  S  I  Y  P  G  N  S  D  T  R  Y 
+
+                                               -----------------------------------------------FR3-IMGT-----------------------------------
+                                                S  P  S  F  Q  G  H  V  T  I  S  A  D  S  S  S  S  T  A  Y  L  Q  W  S  S  L  K  A  S  D 
+                    lcl|Query_6_reversed  312  AGCCCATCCTTCCAAGGCCACGTCACCATCTCAGCCGACAGCTCCAGCAGCACCGCCTACCTGCAGTGGAGCAGCCTGAAGGCCTCGGAC  401
+V  99.3% (292/294)  IGHV5-78*01           181  ..........................................................................................  270
+                                                S  P  S  F  Q  G  H  V  T  I  S  A  D  S  S  S  S  T  A  Y  L  Q  W  S  S  L  K  A  S  D 
+
+                                               -----------------><-----------------------------------------------------------------------
+                                                A  A  M  Y  Y  C  V  R  G  T  I  *  N  L  P  R  C  R  C  R  V  S  C  Q  T  H  P  P  Q  G 
+                    lcl|Query_6_reversed  402  GCCGCCATGTATTATTGTGTGAGAGGGACCATCTAAAACCTTCCGCGGTGCAGGTGCAGAGTGAGCTGCCAGACACACCCTCCCCAGGGG  491
+V  99.3% (292/294)  IGHV5-78*01           271  ........................------------------------------------------------------------------  294
+                                                A  A  M  Y  Y  C  V  R                                                                   
+
+                                               ----------CDR3-IMGT-----------------------------------------------------------------------
+                                                P  L  Y  S  S  G  E  E  T  L  A  V  C  V  L  R  S  K  N  Q  R  T  T  W  E  R  S  *  P  L 
+                    lcl|Query_6_reversed  492  CCTCTCTATTCATCCGGGGAGGAAACACTGGCTGTTTGTGTCCTCAGGAGCAAAAACCAGAGAACAACATGGGAGCGTTCCTAACCCCTA  581
+D  100.0% (7/7)     IGHD3-10*01           15   --------------.......---------------------------------------------------------------------  21
+
+                                               --------->
+                                                R  Q  L  
+                    lcl|Query_6_reversed  582  AGGCAACTGG  591
+J  100.0% (7/7)     IGHJ5*01              2    ---.......  8
+
+
+Lambda      K        H
+    1.10    0.333    0.549 
+
+Gapped
+Lambda      K        H
+    1.08    0.280    0.540 
+
+Effective search space used: 86242870
+
+
+Query= TRINITY_DN55_c0_g3_i4 len=3243 path=[28933:0-289 28934:290-313
+29182:314-795 28973:796-819 29151:820-850 29216:851-874
+29199:875-1059 29146:1060-1177 29231:1178-1187 29226:1188-1211
+29214:1212-1263 29060:1264-1306 @29173@!:1307-1635 29100:1636-1654
+29223:1655-1680 29212:1681-1778 29170:1779-1809 29235:1810-1848
+29234:1849-1872 29230:1873-1948 29239:1949-1952 28999:1953-1976
+29131:1977-2187 29031:2188-2211 29229:2212-2259 29243:2260-2279
+29159:2280-2299 29204:2300-2350 29183:2351-2481 28859:2482-2505
+29156:2506-2638 29245:2639-2666 29039:2667-3242] [-1, 28933, 28934,
+29182, 28973, 29151, 29216, 29199, 29146, 29231, 29226, 29214,
+29060, 29173, 29100, 29223, 29212, 29170, 29235, 29234, 29230,
+29239, 28999, 29131, 29031, 29229, 29243, 29159, 29204, 29183,
+28859, 29156, 29245, 29039, -2]
+
+Length=3243
+                                                                                                      Score        E
+Sequences producing significant alignments:                                                          (Bits)     Value
+
+IGHV3-74*01                                                                                           413        1e-116
+IGHD5-18*01                                                                                           21.8       0.47  
+IGHJ6*02                                                                                              96.8       1e-23 
+
+
+Domain classification requested: imgt
+
+
+Note that your query represents the minus strand of a V gene and has been converted to the plus strand. The sequence positions refer to the converted sequence. 
+
+V-(D)-J rearrangement summary for query sequence (Top V gene match, Top D gene match, Top J gene match, Chain type, stop codon, V-J frame, Productive, Strand).  Multiple equivalent top matches, if present, are separated by a comma.
+IGHV3-74*01	IGHD5-18*01	IGHJ6*02	VH	No	In-frame	Yes	-
+
+V-(D)-J junction details based on top germline gene matches (V end, V-D junction, D region, D-J junction, J start).  Note that possible overlapping nucleotides at VDJ junction (i.e, nucleotides that could be assigned to either rearranging gene) are indicated in parentheses (i.e., (TACT)) but are not included under the V, D, or J gene itself
+AGAGA	TGCCCCCGGGGGGAC	GTGGATACTGCAATGGATAC	CTCCCGCTCACG	ACTAC	
+
+Sub-region sequence details (nucleotide sequence, translation, start, end)
+CDR3	GCAAGAGATGCCCCCGGGGGGACGTGGATACTGCAATGGATACCTCCCGCTCACGACTACGGTATGGACGTC	ARDAPGGTWILQWIPPAHDYGMDV	522	593	
+
+Alignment summary between query and top germline V gene hit (from, to, length, matches, mismatches, gaps, percent identity)
+FR1-IMGT	234	308	75	71	4	0	94.7
+CDR1-IMGT	309	332	24	21	3	0	87.5
+FR2-IMGT	333	383	51	50	1	0	98
+CDR2-IMGT	384	407	24	23	1	0	95.8
+FR3-IMGT	408	521	114	107	7	0	93.9
+CDR3-IMGT (germline)	522	529	8	8	0	0	100
+Total	N/A	N/A	296	280	16	0	94.6
+
+
+Alignments
+
+                                               <--------------------------------FR1-IMGT---------------------------------><-------CDR1-IM
+                                                E  V  Q  L  V  Q  S  G  G  G  S  V  Q  P  G  G  S  L  R  L  S  C  A  A  S  G  F  T  F  R 
+                    lcl|Query_7_reversed  234  GAGGTGCAACTGGTGCAGTCCGGGGGAGGCTCAGTTCAGCCGGGGGGGTCCCTGAGACTCTCCTGTGCAGCCTCTGGATTCACCTTCAGG  323
+V  94.6% (280/296)  IGHV3-74*01           1    ........G......G...............T.........T...............................................T  90
+                                                E  V  Q  L  V  E  S  G  G  G  L  V  Q  P  G  G  S  L  R  L  S  C  A  A  S  G  F  T  F  S 
+
+                                               GT------><--------------------FR2-IMGT---------------------><-------CDR2-IMGT------><-----
+                                                S  Y  W  M  H  W  V  R  Q  V  P  G  K  G  L  V  W  V  S  R  I  N  S  D  G  S  I  T  N  Y 
+                    lcl|Query_7_reversed  324  AGTTATTGGATGCACTGGGTCCGCCAAGTTCCAGGGAAGGGGCTGGTGTGGGTCTCACGTATTAATAGTGATGGGAGTATCACAAACTAC  413
+V  94.6% (280/296)  IGHV3-74*01           91   ..C..C......................C..................................................G.....G....  180
+                                                S  Y  W  M  H  W  V  R  Q  A  P  G  K  G  L  V  W  V  S  R  I  N  S  D  G  S  S  T  S  Y 
+
+                                               -----------------------------------------------FR3-IMGT-----------------------------------
+                                                A  D  S  V  K  G  R  F  S  I  S  R  D  N  A  K  N  T  L  Y  L  Q  M  K  S  L  R  V  E  D 
+                    lcl|Query_7_reversed  414  GCGGACTCCGTGAAGGGCCGATTCAGCATCTCCAGAGACAACGCCAAGAACACACTGTATCTACAAATGAAGAGTCTGAGAGTCGAGGAC  503
+V  94.6% (280/296)  IGHV3-74*01           181  .........................C...........................G........G........C..........C.......  270
+                                                A  D  S  V  K  G  R  F  T  I  S  R  D  N  A  K  N  T  L  Y  L  Q  M  N  S  L  R  A  E  D 
+
+                                               -----------------><-------------------------------CDR3-IMGT------------------------------>
+                                                T  A  V  Y  Y  C  A  R  D  A  P  G  G  T  W  I  L  Q  W  I  P  P  A  H  D  Y  G  M  D  V 
+                    lcl|Query_7_reversed  504  ACGGCTGTGTATTATTGTGCAAGAGATGCCCCCGGGGGGACGTGGATACTGCAATGGATACCTCCCGCTCACGACTACGGTATGGACGTC  593
+V  94.6% (280/296)  IGHV3-74*01           271  ..............C...........----------------------------------------------------------------  296
+                                                T  A  V  Y  Y  C  A  R                                                                   
+D  85.0% (17/20)    IGHD5-18*01           1    -----------------------------------------........A..T....T...-----------------------------  20
+J  100.0% (50/50)   IGHJ6*02              13   -------------------------------------------------------------------------.................  29
+
+                                               <-----------FR4-IMGT------------>
+                                                W  G  Q  G  T  T  V  T  V  S  S 
+                    lcl|Query_7_reversed  594  TGGGGCCAAGGGACCACGGTCACCGTCTCCTCA  626
+J  100.0% (50/50)   IGHJ6*02              30   .................................  62
+
+
+Lambda      K        H
+    1.10    0.333    0.549 
+
+Gapped
+Lambda      K        H
+    1.08    0.280    0.540 
+
+Effective search space used: 340096276
+
+
+Query= TRINITY_DN55_c0_g2_i1 len=643 path=[28881:0-37 28882:38-38
+28883:39-66 28884:67-642] [-1, 28881, 28882, 28883, 28884, -2]
+
+Length=643
+                                                                                                      Score        E
+Sequences producing significant alignments:                                                          (Bits)     Value
+
+IGHV3-74*01                                                                                           413        3e-117
+IGHD5-18*01                                                                                           21.8       0.11  
+IGHJ6*02                                                                                              96.8       3e-24 
+
+
+Domain classification requested: imgt
+
+
+Note that your query represents the minus strand of a V gene and has been converted to the plus strand. The sequence positions refer to the converted sequence. 
+
+V-(D)-J rearrangement summary for query sequence (Top V gene match, Top D gene match, Top J gene match, Chain type, stop codon, V-J frame, Productive, Strand).  Multiple equivalent top matches, if present, are separated by a comma.
+IGHV3-74*01	IGHD5-18*01	IGHJ6*02	VH	No	In-frame	Yes	-
+
+V-(D)-J junction details based on top germline gene matches (V end, V-D junction, D region, D-J junction, J start).  Note that possible overlapping nucleotides at VDJ junction (i.e, nucleotides that could be assigned to either rearranging gene) are indicated in parentheses (i.e., (TACT)) but are not included under the V, D, or J gene itself
+AGAGA	TGCCCCCGGGGGGAC	GTGGATACTGCAATGGATAC	CTCCCGCTCACG	ACTAC	
+
+Sub-region sequence details (nucleotide sequence, translation, start, end)
+CDR3	GCAAGAGATGCCCCCGGGGGGACGTGGATACTGCAATGGATACCTCCCGCTCACGACTACGGTATGGACGTC	ARDAPGGTWILQWIPPAHDYGMDV	522	593	
+
+Alignment summary between query and top germline V gene hit (from, to, length, matches, mismatches, gaps, percent identity)
+FR1-IMGT	234	308	75	71	4	0	94.7
+CDR1-IMGT	309	332	24	21	3	0	87.5
+FR2-IMGT	333	383	51	50	1	0	98
+CDR2-IMGT	384	407	24	23	1	0	95.8
+FR3-IMGT	408	521	114	107	7	0	93.9
+CDR3-IMGT (germline)	522	529	8	8	0	0	100
+Total	N/A	N/A	296	280	16	0	94.6
+
+
+Alignments
+
+                                               <--------------------------------FR1-IMGT---------------------------------><-------CDR1-IM
+                                                E  V  Q  L  V  Q  S  G  G  G  S  V  Q  P  G  G  S  L  R  L  S  C  A  A  S  G  F  T  F  R 
+                    lcl|Query_8_reversed  234  GAGGTGCAACTGGTGCAGTCCGGGGGAGGCTCAGTTCAGCCGGGGGGGTCCCTGAGACTCTCCTGTGCAGCCTCTGGATTCACCTTCAGG  323
+V  94.6% (280/296)  IGHV3-74*01           1    ........G......G...............T.........T...............................................T  90
+                                                E  V  Q  L  V  E  S  G  G  G  L  V  Q  P  G  G  S  L  R  L  S  C  A  A  S  G  F  T  F  S 
+
+                                               GT------><--------------------FR2-IMGT---------------------><-------CDR2-IMGT------><-----
+                                                S  Y  W  M  H  W  V  R  Q  V  P  G  K  G  L  V  W  V  S  R  I  N  S  D  G  S  I  T  N  Y 
+                    lcl|Query_8_reversed  324  AGTTATTGGATGCACTGGGTCCGCCAAGTTCCAGGGAAGGGGCTGGTGTGGGTCTCACGTATTAATAGTGATGGGAGTATCACAAACTAC  413
+V  94.6% (280/296)  IGHV3-74*01           91   ..C..C......................C..................................................G.....G....  180
+                                                S  Y  W  M  H  W  V  R  Q  A  P  G  K  G  L  V  W  V  S  R  I  N  S  D  G  S  S  T  S  Y 
+
+                                               -----------------------------------------------FR3-IMGT-----------------------------------
+                                                A  D  S  V  K  G  R  F  S  I  S  R  D  N  A  K  N  T  L  Y  L  Q  M  K  S  L  R  V  E  D 
+                    lcl|Query_8_reversed  414  GCGGACTCCGTGAAGGGCCGATTCAGCATCTCCAGAGACAACGCCAAGAACACACTGTATCTACAAATGAAGAGTCTGAGAGTCGAGGAC  503
+V  94.6% (280/296)  IGHV3-74*01           181  .........................C...........................G........G........C..........C.......  270
+                                                A  D  S  V  K  G  R  F  T  I  S  R  D  N  A  K  N  T  L  Y  L  Q  M  N  S  L  R  A  E  D 
+
+                                               -----------------><-------------------------------CDR3-IMGT------------------------------>
+                                                T  A  V  Y  Y  C  A  R  D  A  P  G  G  T  W  I  L  Q  W  I  P  P  A  H  D  Y  G  M  D  V 
+                    lcl|Query_8_reversed  504  ACGGCTGTGTATTATTGTGCAAGAGATGCCCCCGGGGGGACGTGGATACTGCAATGGATACCTCCCGCTCACGACTACGGTATGGACGTC  593
+V  94.6% (280/296)  IGHV3-74*01           271  ..............C...........----------------------------------------------------------------  296
+                                                T  A  V  Y  Y  C  A  R                                                                   
+D  85.0% (17/20)    IGHD5-18*01           1    -----------------------------------------........A..T....T...-----------------------------  20
+J  100.0% (50/50)   IGHJ6*02              13   -------------------------------------------------------------------------.................  29
+
+                                               <-----------FR4-IMGT------------>
+                                                W  G  Q  G  T  T  V  T  V  S  S 
+                    lcl|Query_8_reversed  594  TGGGGCCAAGGGACCACGGTCACCGTCTCCTCA  626
+J  100.0% (50/50)   IGHJ6*02              30   .................................  62
+
+
+Lambda      K        H
+    1.10    0.333    0.549 
+
+Gapped
+Lambda      K        H
+    1.08    0.280    0.540 
+
+Effective search space used: 66137100
+
+
+Query= TRINITY_DN85_c0_g1_i1 len=834 path=[812:0-833] [-1, 812, -2]
+
+Length=834
+                                                                                                      Score        E
+Sequences producing significant alignments:                                                          (Bits)     Value
+
+IGHV5-78*01                                                                                           453        2e-129
+IGHD3-10*01                                                                                           14.1       27    
+IGHJ5*01                                                                                              14.1       25    
+
+
+Domain classification requested: imgt
+
+
+Note that your query represents the minus strand of a V gene and has been converted to the plus strand. The sequence positions refer to the converted sequence. 
+
+V-(D)-J rearrangement summary for query sequence (Top V gene match, Top D gene match, Top J gene match, Chain type, stop codon, V-J frame, Productive, Strand).  Multiple equivalent top matches, if present, are separated by a comma.
+IGHV5-78*01	IGHD3-10*01	IGHJ5*01	VH	Yes	Out-of-frame	No	-
+
+V-(D)-J junction details based on top germline gene matches (V end, V-D junction, D region, D-J junction, J start).  Note that possible overlapping nucleotides at VDJ junction (i.e, nucleotides that could be assigned to either rearranging gene) are indicated in parentheses (i.e., (TACT)) but are not included under the V, D, or J gene itself
+TGAGA	GGGACCATCTAAAACCTTCCGCGGTGCAGGTGCAGAGTGAGCTGCCAGACACACCCTCCCCAGGGGCCTCTCTATTCATC	CGGGGAG	GAAACACTGGCTGTTTGTGTCCTCAGGAGCAAAAACCAGAGAACAACATGGGAGCGTTCCTAACCCCTAAGG	CAACT	
+
+Sub-region sequence details (nucleotide sequence, translation, start, end)
+CDR3	GTGAGAGGGACCATCTAAAACCTTCCGCGGTGCAGGTGCAGAGTGAGCTGCCAGACACACCCTCCCCAGGGGCCTCTCTATTCATCCGGGGAGGAAACACTGGCTGTTTGTGTCCTCAGGAGCAAAAACCAGAGAACAACATGGGAGCGTTCCTAACCCCTAAGGCAACTGG	VRGTI*NLPRCRCRVSCQTHPPQGPLYSSGEETLAVCVLRSKNQRTTWERS*PLRQL	420	591	
+
+Alignment summary between query and top germline V gene hit (from, to, length, matches, mismatches, gaps, percent identity)
+FR1-IMGT	132	206	75	75	0	0	100
+CDR1-IMGT	207	230	24	24	0	0	100
+FR2-IMGT	231	281	51	50	1	0	98
+CDR2-IMGT	282	305	24	24	0	0	100
+FR3-IMGT	306	419	114	113	1	0	99.1
+CDR3-IMGT (germline)	420	425	6	6	0	0	100
+Total	N/A	N/A	294	292	2	0	99.3
+
+
+Alignments
+
+                                               <--------------------------------FR1-IMGT---------------------------------><-------CDR1-IM
+                                                E  V  Q  L  L  Q  S  A  A  E  V  K  R  P  G  E  S  L  R  I  S  C  K  T  S  G  Y  S  F  T 
+                    lcl|Query_9_reversed  132  GAGGTGCAGCTGTTGCAGTCTGCAGCAGAGGTGAAAAGACCCGGGGAGTCTCTGAGGATCTCCTGTAAGACTTCTGGATACAGCTTTACC  221
+V  99.3% (292/294)  IGHV5-78*01           1    ..........................................................................................  90
+                                                E  V  Q  L  L  Q  S  A  A  E  V  K  R  P  G  E  S  L  R  I  S  C  K  T  S  G  Y  S  F  T 
+
+                                               GT------><--------------------FR2-IMGT---------------------><-------CDR2-IMGT------><-----
+                                                S  Y  W  I  H  W  V  R  Q  M  P  G  K  Q  L  E  W  M  G  S  I  Y  P  G  N  S  D  T  T  Y 
+                    lcl|Query_9_reversed  222  AGCTACTGGATCCACTGGGTGCGCCAGATGCCCGGGAAACAACTGGAGTGGATGGGGAGCATCTATCCTGGGAACTCTGATACCACATAC  311
+V  99.3% (292/294)  IGHV5-78*01           91   .......................................G.............................................G....  180
+                                                S  Y  W  I  H  W  V  R  Q  M  P  G  K  E  L  E  W  M  G  S  I  Y  P  G  N  S  D  T  R  Y 
+
+                                               -----------------------------------------------FR3-IMGT-----------------------------------
+                                                S  P  S  F  Q  G  H  V  T  I  S  A  D  S  S  S  S  T  A  Y  L  Q  W  S  S  L  K  A  S  D 
+                    lcl|Query_9_reversed  312  AGCCCATCCTTCCAAGGCCACGTCACCATCTCAGCCGACAGCTCCAGCAGCACCGCCTACCTGCAGTGGAGCAGCCTGAAGGCCTCGGAC  401
+V  99.3% (292/294)  IGHV5-78*01           181  ..........................................................................................  270
+                                                S  P  S  F  Q  G  H  V  T  I  S  A  D  S  S  S  S  T  A  Y  L  Q  W  S  S  L  K  A  S  D 
+
+                                               -----------------><-----------------------------------------------------------------------
+                                                A  A  M  Y  Y  C  V  R  G  T  I  *  N  L  P  R  C  R  C  R  V  S  C  Q  T  H  P  P  Q  G 
+                    lcl|Query_9_reversed  402  GCCGCCATGTATTATTGTGTGAGAGGGACCATCTAAAACCTTCCGCGGTGCAGGTGCAGAGTGAGCTGCCAGACACACCCTCCCCAGGGG  491
+V  99.3% (292/294)  IGHV5-78*01           271  ........................------------------------------------------------------------------  294
+                                                A  A  M  Y  Y  C  V  R                                                                   
+
+                                               ----------CDR3-IMGT-----------------------------------------------------------------------
+                                                P  L  Y  S  S  G  E  E  T  L  A  V  C  V  L  R  S  K  N  Q  R  T  T  W  E  R  S  *  P  L 
+                    lcl|Query_9_reversed  492  CCTCTCTATTCATCCGGGGAGGAAACACTGGCTGTTTGTGTCCTCAGGAGCAAAAACCAGAGAACAACATGGGAGCGTTCCTAACCCCTA  581
+D  100.0% (7/7)     IGHD3-10*01           15   --------------.......---------------------------------------------------------------------  21
+
+                                               --------->
+                                                R  Q  L  
+                    lcl|Query_9_reversed  582  AGGCAACTGG  591
+J  100.0% (7/7)     IGHJ5*01              2    ---.......  8
+
+
+Lambda      K        H
+    1.10    0.333    0.549 
+
+Gapped
+Lambda      K        H
+    1.08    0.280    0.540 
+
+Effective search space used: 86242870
+
+Total queries = 9
+Total identifiable CDR3 = 9
+Total unique clonotypes = 2
+
+
+#Clonotype summary.  A particular clonotype includes any V(D)J rearrangements that have the same germline V(D)J gene segments, the same productive/non-productive status and the same CDR3 nucleotide as well as amino sequence (Those having the same CDR3 nucleotide but different amino acid sequence or productive/non-productive status due to frameshift in V or J gene are assigned to a different clonotype.  However, their clonotype identifers share the same prefix, for example, 6a, 6b).  Fields (tab-delimited) are clonotype identifier, representative query sequence name, count, frequency (%), CDR3 nucleotide sequence, CDR3 amino acid sequence, productive status, chain type, V gene, D gene, J gene
+
+1	TRINITY_DN54_c1_g3_i2 len=3243 path=[29382:0-	7	77.8	GCAAGAGATGCCCCCGGGGGGACGTGGATACTGCAATGGATACCTCCCGCTCACGACTACGGTATGGACGTC	ARDAPGGTWILQWIPPAHDYGMDV	Yes	VH	IGHV3-74*01	IGHD5-18*01	IGHJ6*02	
+2	TRINITY_DN68_c0_g1_i1 len=834 path=[812:0-833	2	22.2	GTGAGAGGGACCATCTAAAACCTTCCGCGGTGCAGGTGCAGAGTGAGCTGCCAGACACACCCTCCCCAGGGGCCTCTCTATTCATCCGGGGAGGAAACACTGGCTGTTTGTGTCCTCAGGAGCAAAAACCAGAGAACAACATGGGAGCGTTCCTAACCCCTAAGGCAACTGG	VRGTI*NLPRCRCRVSCQTHPPQGPLYSSGEETLAVCVLRSKNQRTTWERS*PLRQL	No	VH	IGHV5-78*01	IGHD3-10*01	IGHJ5*01	
+
+#All query sequences grouped by clonotypes.  Fields (tab-delimited) are clonotype identifier, count, frequency (%), min similarity to top germline V gene (%), max similarity to top germline V gene (%), average similarity to top germline V gene (%), query sequence name (multiple names are separated by a comma if applicable)
+
+1	7	77.8	94.6	94.6	94.6	TRINITY_DN54_c1_g3_i2 len=3243 path=[29382:0-,TRINITY_DN54_c1_g2_i5 len=4196 path=[29405:0-,TRINITY_DN54_c1_g2_i6 len=6337 path=[29228:0-,TRINITY_DN54_c1_g2_i3 len=3306 path=[29230:0-,TRINITY_DN54_c1_g1_i1 len=643 path=[29295:0-3,TRINITY_DN55_c0_g3_i4 len=3243 path=[28933:0-,TRINITY_DN55_c0_g2_i1 len=643 path=[28881:0-3	
+2	2	22.2	99.3	99.3	99.3	TRINITY_DN68_c0_g1_i1 len=834 path=[812:0-833,TRINITY_DN85_c0_g1_i1 len=834 path=[812:0-833	
+
+
+  Database: formatted_IGHV.fasta
+    Posted date:  Jan 28, 2021  1:27 PM
+  Number of letters in database: 118,908
+  Number of sequences in database:  406
+
+  Database: formatted_IGHD.fasta
+    Posted date:  Jan 28, 2021  1:27 PM
+  Number of letters in database: 1,070
+  Number of sequences in database:  44
+
+  Database: formatted_IGHJ.fasta
+    Posted date:  Jan 28, 2021  1:27 PM
+  Number of letters in database: 701
+  Number of sequences in database:  13
+
+
+
+Matrix: blastn matrix 1 -1
+Gap Penalties: Existence: 4, Extension: 1

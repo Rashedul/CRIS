@@ -8,7 +8,7 @@ CRIS reconstructs entire *IGHV* gene to identify somatic hypermutation status in
 
 ```
 git clone https://github.com/Rashedul/CRIS
-cd CRIS
+cd CRIS # run CRIS from this directory
 ```
 
 ### Dependencies
