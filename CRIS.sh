@@ -59,10 +59,10 @@ Trinity --seqType fq --max_memory $max_memory_assembly --left $input_bam_file.sl
 # ../edit_imgt_file.pl IGHD.fasta > formatted_IGHD.fasta
 # ../edit_imgt_file.pl IGHJ.fasta > formatted_IGHJ.fasta
 
-#make balst database
-makeblastdb -in formatted_IGHV.fasta -dbtype nucl -parse_seqids -out IGHV
-makeblastdb -in formatted_IGHD.fasta -dbtype nucl -parse_seqids -out IGHD
-makeblastdb -in formatted_IGHJ.fasta -dbtype nucl -parse_seqids -out IGHJ
+# #make balst database
+# makeblastdb -in formatted_IGHV.fasta -dbtype nucl -parse_seqids -out IGHV
+# makeblastdb -in formatted_IGHD.fasta -dbtype nucl -parse_seqids -out IGHD
+# makeblastdb -in formatted_IGHJ.fasta -dbtype nucl -parse_seqids -out IGHJ
 
 #######################################################################
 #  filter IGHV transcripts and identify highly expressed transcripts  #
