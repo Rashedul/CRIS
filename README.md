@@ -47,7 +47,7 @@ Usage: CRIS.sh -inbam <input_bam_file> -threads <num_threads> -memory <max_memor
 
 ### Test run
 
-**NOTE:** bam file must be aligned to the hg38 genome build, coordinate-sorted and indexed. This pipeline is tested for BWA and STAR alignment of paired-end RNA-seq reads.
+**NOTE:** bam file must be aligned to the hg38 genome build, coordinate-sorted and indexed. This pipeline is tested for BWA and STAR alignment of paired-end RNA-seq reads. 
  
 IGHV status for SRR1814049 (US-1422278) using Sanger sequencing:
 
@@ -56,6 +56,9 @@ IGHV status for SRR1814049 (US-1422278) using Sanger sequencing:
 
 ```
 bash CRIS.sh -inbam SRR1814049_test.bam
+or 
+bash CRIS.sh -inbam /path/SRR1814049_test.bam
+
 ```
 
 ### Output files

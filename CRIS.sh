@@ -25,7 +25,7 @@ done
 ###############################################################
 # Slice bam; PE bam to fastq; de novo assembly of transcripts #
 ###############################################################
-
+input_bam_file=$(basename $input_bam_file)
 mkdir -p CRIS_out.$input_bam_file
 cd CRIS_out.$input_bam_file
 
