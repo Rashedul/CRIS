@@ -54,14 +54,19 @@ curl -O http://www.imgt.org/download/V-QUEST/IMGT_V-QUEST_reference_directory/Ho
 curl -O http://www.imgt.org/download/V-QUEST/IMGT_V-QUEST_reference_directory/Homo_sapiens/IG/IGHD.fasta
 curl -O http://www.imgt.org/download/V-QUEST/IMGT_V-QUEST_reference_directory/Homo_sapiens/IG/IGHJ.fasta
 
-# modify IMGT fasta files
-less IGHV.fasta | sed -e '/^[^>]/s/[^ATGCatgc]//g' >IGHV_edited.fasta # remove . with empty string
-less IGHD.fasta | awk '{print $1}' IGHD.fasta >IGHD_edited.fasta # remove ||| from Ids
+# modify IMGT fasta for blast compatibility
+../edit_imgt_file.pl IGHV.fasta > formatted_IGHV.fasta
+../edit_imgt_file.pl IGHD.fasta > formatted_IGHD.fasta
+../edit_imgt_file.pl IGHJ.fasta > formatted_IGHJ.fasta
+
+# # modify IMGT fasta files
+# less IGHV.fasta | sed -e '/^[^>]/s/[^ATGCatgc]//g' >IGHV_edited.fasta # remove . with empty string
+# less IGHD.fasta | awk '{print $1}' IGHD.fasta >IGHD_edited.fasta # remove ||| from Ids
 
 #make balst database
-makeblastdb -in IGHV_edited.fasta -dbtype nucl -parse_seqids -out IGHV
-makeblastdb -in IGHD_edited.fasta -dbtype nucl -parse_seqids -out IGHD
-makeblastdb -in IGHJ.fasta -dbtype nucl -parse_seqids -out IGHJ
+makeblastdb -in formatted_IGHV.fasta -dbtype nucl -parse_seqids -out IGHV
+makeblastdb -in formatted_IGHD.fasta -dbtype nucl -parse_seqids -out IGHD
+makeblastdb -in formatted_IGHJ.fasta -dbtype nucl -parse_seqids -out IGHJ
 
 #######################################################################
 #  filter IGHV transcripts and identify highly expressed transcripts  #
@@ -97,7 +102,7 @@ less $f | seqkit grep -p $line;
 done <list >>$input_bam_file.ig-transcripts.sortedbyTPM.fasta
 
 # igblastn for SHM and clonotypes
-igblastn -germline_db_V IGHV -num_alignments_V 1 -germline_db_J IGHJ -num_alignments_J 1 -germline_db_D IGHD -num_alignments_D 1 -organism human -query $input_bam_file.ig-transcripts.sortedbyTPM.fasta -show_translation -auxiliary_data human_gl.aux >$input_bam_file.IgBLAST_out.txt
+igblastn -germline_db_V IGHV -num_alignments_V 1 -germline_db_J IGHJ -num_alignments_J 1 -germline_db_D IGHD -num_alignments_D 1 -organism human -query $input_bam_file.ig-transcripts.sortedbyTPM.fasta -show_translation -auxiliary_data ../human_gl.aux >$input_bam_file.IgBLAST_out.txt
 #igblastn -germline_db_V IGHV -germline_db_J IGHJ -germline_db_D IGHD -organism human -query SRR1814049.bam.ig-transcripts.sortedbyTPM.fasta -show_translation
 #default "-outfmt 3". "-outfmt 7" provides the table and does not show alignment 
 # out says clonotypes = 0
