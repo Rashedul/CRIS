@@ -96,7 +96,7 @@ while read line; do
 less $f | seqkit grep -p $line;
 done <list >>$input_bam_file.ig-transcripts.sortedbyTPM.fasta
 
-# add igblastn
+# igblastn for SHM and clonotypes
 igblastn -germline_db_V IGHV -num_alignments_V 1 -germline_db_J IGHJ -num_alignments_J 1 -germline_db_D IGHD -num_alignments_D 1 -organism human -query $input_bam_file.ig-transcripts.sortedbyTPM.fasta -show_translation >$input_bam_file.IgBLAST_out.txt
 #igblastn -germline_db_V IGHV -germline_db_J IGHJ -germline_db_D IGHD -organism human -query SRR1814049.bam.ig-transcripts.sortedbyTPM.fasta -show_translation
 #default "-outfmt 3". "-outfmt 7" provides the table and does not show alignment 
