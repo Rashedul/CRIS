@@ -49,15 +49,16 @@ Trinity --seqType fq --max_memory $max_memory_assembly --left $input_bam_file.sl
 #                  make blast db for igh sequences                    #
 #######################################################################
 
-# # download germline IGHV sequences from IMGT
+# # download germline IGHV sequences from IMGT 
+# cd ../data
 # curl -O http://www.imgt.org/download/V-QUEST/IMGT_V-QUEST_reference_directory/Homo_sapiens/IG/IGHV.fasta
 # curl -O http://www.imgt.org/download/V-QUEST/IMGT_V-QUEST_reference_directory/Homo_sapiens/IG/IGHD.fasta
 # curl -O http://www.imgt.org/download/V-QUEST/IMGT_V-QUEST_reference_directory/Homo_sapiens/IG/IGHJ.fasta
 
 # # modify IMGT fasta for blast compatibility
-# ../edit_imgt_file.pl IGHV.fasta > formatted_IGHV.fasta
-# ../edit_imgt_file.pl IGHD.fasta > formatted_IGHD.fasta
-# ../edit_imgt_file.pl IGHJ.fasta > formatted_IGHJ.fasta
+# edit_imgt_file.pl IGHV.fasta > formatted_IGHV.fasta
+# edit_imgt_file.pl IGHD.fasta > formatted_IGHD.fasta
+# edit_imgt_file.pl IGHJ.fasta > formatted_IGHJ.fasta
 
 # #make balst database
 # makeblastdb -in formatted_IGHV.fasta -dbtype nucl -parse_seqids -out IGHV
@@ -73,7 +74,7 @@ printf "Filtering IGHV transcripts using blastn...\n\n"
 #filter IGHV sequnces by blastn 
 f=*Trinity.fasta
 #get transcript ids having match with ig-genes by blastn
-blastn -db data/IGHV -query $f -out $input_bam_file"_blastn" -num_threads $num_threads -outfmt 6;
+blastn -db ../data/IGHV -query $f -out $input_bam_file"_blastn" -num_threads $num_threads -outfmt 6;
 #remove duplicated ids
 less $input_bam_file"_blastn" | awk '!seen[$1]++' | awk '{print $1}' > $input_bam_file"_blastn_HG_IG_remdup.ID"
 #filter transcript fasta file by transcript id
@@ -96,11 +97,10 @@ less $f | seqkit grep -p $line;
 done <list >>$input_bam_file.ig-transcripts.sortedbyTPM.fasta
 
 # igblastn for SHM and clonotypes
-igblastn -germline_db_V data/IGHV -num_alignments_V 1 -germline_db_J data/IGHJ -num_alignments_J 1 -germline_db_D data/IGHD -num_alignments_D 1 -organism human -query $input_bam_file.ig-transcripts.sortedbyTPM.fasta -show_translation -auxiliary_data data/human_gl.aux >$input_bam_file.IgBLAST_out.txt
+igblastn -germline_db_V ../data/IGHV -num_alignments_V 1 -germline_db_J ../data/IGHJ -num_alignments_J 1 -germline_db_D ../data/IGHD -num_alignments_D 1 -organism human -query $input_bam_file.ig-transcripts.sortedbyTPM.fasta -show_translation -auxiliary_data ../data/human_gl.aux >$input_bam_file.IgBLAST_out.txt
 
 #remove temporary files
 rm -r salmon_index
-rm IGH* *slice* *_blastn* *.Trinity.fasta *bed list formatted*
-#rm *slice* *_blastn* *.Trinity.fasta *bed list
+rm *slice* *_blastn* *.Trinity.fasta *bed list
 
 printf "#### finished job...\n\n"
