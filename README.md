@@ -8,10 +8,7 @@ CRIS reconstructs entire *IGHV* gene to identify somatic hypermutation status in
 
 ```
 git clone https://github.com/Rashedul/CRIS
-cd CRIS/bin
-
-# Add the CRIS directory to your executable path.  For example, edit your ~/.bash_profile file to include the line:
-PATH=$PATH:/Users/rislam/CRIS/bin/
+cd CRIS/ # run CRIS from this directory 
 ```
 
 ### Dependencies
