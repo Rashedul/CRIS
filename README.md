@@ -8,7 +8,10 @@ CRIS reconstructs entire *IGHV* gene to identify somatic hypermutation status in
 
 ```
 git clone https://github.com/Rashedul/CRIS
-cd CRIS # run CRIS from this directory
+cd CRIS/bin
+
+# Add the CRIS directory to your executable path.  For example, edit your ~/.bash_profile file to include the line:
+PATH=$PATH:/Users/rislam/CRIS/bin/
 ```
 
 ### Dependencies
@@ -58,7 +61,6 @@ IGHV status for SRR1814049 (US-1422278) using Sanger sequencing:
 bash CRIS.sh -inbam SRR1814049_test.bam
 or 
 bash CRIS.sh -inbam /path/SRR1814049_test.bam
-
 ```
 
 ### Output files
