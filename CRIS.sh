@@ -25,9 +25,9 @@ done
 ###############################################################
 # Slice bam; PE bam to fastq; de novo assembly of transcripts #
 ###############################################################
-input_bam_file=$(basename $input_bam_file)
-mkdir -p CRIS_out.$input_bam_file
-cd CRIS_out.$input_bam_file
+input_bam_file_name=$(basename $input_bam_file)
+mkdir -p CRIS_out.$input_bam_file_name
+cd CRIS_out.$input_bam_file_name
 
 #hg38 ig coordinates
 echo "chr14   105600001       106880000
@@ -37,13 +37,13 @@ chr16   31950001        33970000
 chr16_KI270728v1_random 0       1872759" >Ig_regions.bed
 
 #slice bam by regions of interest. For slice, input file must be coordinate-sorted and indexed
-sambamba slice ../$input_bam_file -L Ig_regions.bed -o $input_bam_file.slice.bam
-picard SamToFastq I=$input_bam_file.slice.bam F=$input_bam_file.slice.R1.fastq F2=$input_bam_file.slice.R2.fastq
+sambamba slice $input_bam_file -L Ig_regions.bed -o $input_bam_file_name.slice.bam
+picard SamToFastq I=$input_bam_file_name.slice.bam F=$input_bam_file_name.slice.R1.fastq F2=$input_bam_file_name.slice.R2.fastq
 
 printf "Trinity is constructing de novo transcripts...\n\n"
 
 #trinity de novo assembly
-Trinity --seqType fq --max_memory $max_memory_assembly --left $input_bam_file.slice.R1.fastq --right $input_bam_file.slice.R2.fastq --CPU $num_threads --trimmomatic --full_cleanup;
+Trinity --seqType fq --max_memory $max_memory_assembly --left $input_bam_file_name.slice.R1.fastq --right $input_bam_file_name.slice.R2.fastq --CPU $num_threads --trimmomatic --full_cleanup;
 
 #######################################################################
 #                  make blast db for igh sequences                    #
@@ -74,30 +74,30 @@ printf "Filtering IGHV transcripts using blastn...\n\n"
 #filter IGHV sequnces by blastn 
 f=*Trinity.fasta
 #get transcript ids having match with ig-genes by blastn
-blastn -db ../data/IGHV -query $f -out $input_bam_file"_blastn" -num_threads $num_threads -outfmt 6;
+blastn -db ../data/IGHV -query $f -out $input_bam_file_name"_blastn" -num_threads $num_threads -outfmt 6;
 #remove duplicated ids
-less $input_bam_file"_blastn" | awk '!seen[$1]++' | awk '{print $1}' > $input_bam_file"_blastn_HG_IG_remdup.ID"
+less $input_bam_file_name"_blastn" | awk '!seen[$1]++' | awk '{print $1}' > $input_bam_file_name"_blastn_HG_IG_remdup.ID"
 #filter transcript fasta file by transcript id
-less $f | seqkit grep -f $input_bam_file"_blastn_HG_IG_remdup.ID" > $input_bam_file"_blastn_HG_IG_remdup.ID.fa"
+less $f | seqkit grep -f $input_bam_file_name"_blastn_HG_IG_remdup.ID" > $input_bam_file_name"_blastn_HG_IG_remdup.ID.fa"
 
 printf "\n\n running salmon to estimate transcript abundace...\n\n"
 
 #create sailfish index and quantify transcript abundances
-fa=$input_bam_file"_blastn_HG_IG_remdup.ID.fa"
+fa=$input_bam_file_name"_blastn_HG_IG_remdup.ID.fa"
 salmon index -t $fa -i salmon_index -k 25 -p $num_threads
-salmon quant -i salmon_index -l "OSR" -1 $input_bam_file.slice.R1.fastq -2 $input_bam_file.slice.R2.fastq -o salmon_index
+salmon quant -i salmon_index -l "OSR" -1 $input_bam_file_name.slice.R1.fastq -2 $input_bam_file_name.slice.R2.fastq -o salmon_index
 
 #sort transcript ids by tpm values
-less ./salmon_index/quant.sf | sort -nr -k4 | grep -v "Name" | sed  '1i #Name    Length  EffectiveLength TPM     NumReads' >$input_bam_file.ig-transcripts.sortedbyTPM.txt
-less $input_bam_file.ig-transcripts.sortedbyTPM.txt | awk '{print $1}' | grep -v "Name" >list
+less ./salmon_index/quant.sf | sort -nr -k4 | grep -v "Name" | sed  '1i #Name    Length  EffectiveLength TPM     NumReads' >$input_bam_file_name.ig-transcripts.sortedbyTPM.txt
+less $input_bam_file_name.ig-transcripts.sortedbyTPM.txt | awk '{print $1}' | grep -v "Name" >list
 
 #sort fasta file by transcript ids
 while read line; do
 less $f | seqkit grep -p $line;
-done <list >>$input_bam_file.ig-transcripts.sortedbyTPM.fasta
+done <list >>$input_bam_file_name.ig-transcripts.sortedbyTPM.fasta
 
 # igblastn for SHM and clonotypes
-igblastn -germline_db_V ../data/IGHV -num_alignments_V 1 -germline_db_J ../data/IGHJ -num_alignments_J 1 -germline_db_D ../data/IGHD -num_alignments_D 1 -organism human -query $input_bam_file.ig-transcripts.sortedbyTPM.fasta -show_translation -auxiliary_data ../data/human_gl.aux >$input_bam_file.IgBLAST_out.txt
+igblastn -germline_db_V ../data/IGHV -num_alignments_V 1 -germline_db_J ../data/IGHJ -num_alignments_J 1 -germline_db_D ../data/IGHD -num_alignments_D 1 -organism human -query $input_bam_file_name.ig-transcripts.sortedbyTPM.fasta -show_translation -auxiliary_data ../data/human_gl.aux >$input_bam_file_name.IgBLAST_out.txt
 
 #remove temporary files
 rm -r salmon_index
