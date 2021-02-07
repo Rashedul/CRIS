@@ -2,10 +2,11 @@
 if [ "$1" == "-h" ] ; then
         echo -e "Construction of IHGV transcripts from RNA-seq.
 
-Usage: `basename $0` -inbam <input_bam_file> -threads <num_threads> -memory <max_memory_assembly>
+Usage: `basename $0` -inbam <input_bam_file> -outdir <output_directory> -threads <num_threads> -memory <max_memory_assembly>
                         <input_bam_file>: bam file must be aligned to hg38 genome build, coordinate-sorted and indexed
-                        <num_threads>: number of threads; default 4
-                        <max_memory_assembly>: maximum memory in G (gigabyte) allowed for assembly; default 4G"
+                        <output_directory>: path of the output directory
+                        <num_threads>: (optional) number of threads; default 4
+                        <max_memory_assembly>: (optional) maximum memory in G (gigabyte) allowed for assembly; default 4G"
 exit 0
 fi
 
@@ -17,6 +18,7 @@ while [ $# -gt 0 ]
 do
         case "$1" in
         -inbam) input_bam_file="$2"; shift;;
+        -outdir) output_directory="$2"; shift;;
         -threads) num_threads="$2"; shift;;
         -memory) max_memory_assembly="$2"; shift;;
         esac
@@ -100,8 +102,11 @@ done <list >>$input_bam_file_name.ig-transcripts.sortedbyTPM.fasta
 # igblastn for SHM and clonotypes
 igblastn -germline_db_V ../data/IGHV -num_alignments_V 1 -germline_db_J ../data/IGHJ -num_alignments_J 1 -germline_db_D ../data/IGHD -num_alignments_D 1 -organism human -query $input_bam_file_name.ig-transcripts.sortedbyTPM.fasta -show_translation -auxiliary_data ../data/human_gl.aux >$input_bam_file_name.IgBLAST_out.txt
 
-#remove temporary files
-rm -r salmon_index
-rm *slice* *_blastn* *.Trinity.fasta *bed list
+#copy all files to the outdir
+cp $input_bam_file_name*txt $output_directory
+cp $input_bam_file_name*fasta $output_directory
+
+#remove temporary directory
+rm -r ../CRIS_out.$input_bam_file_name
 
 printf "#### finished job...\n\n"
