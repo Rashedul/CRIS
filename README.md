@@ -39,8 +39,9 @@ bash CRIS.sh -h
 
 Construction of IHGV transcripts from RNA-seq.
 
-Usage: CRIS.sh -inbam <input_bam_file> -threads <num_threads> -memory <max_memory_assembly>
+Usage: CRIS_temp.sh -inbam <input_bam_file> -outdir <output_directory> -threads <num_threads> -memory <max_memory_assembly>
                         <input_bam_file>: bam file must be aligned to hg38 genome build, coordinate-sorted and indexed
+                        <output_directory>: path of the output directory
                         <num_threads>: number of threads; default 4
                         <max_memory_assembly>: maximum memory in G (gigabyte) allowed for assembly; default 4G
 ```
@@ -55,9 +56,7 @@ IGHV status for SRR1814049 (US-1422278) using Sanger sequencing:
 * Percent identity: 94.6
 
 ```
-bash CRIS.sh -inbam SRR1814049_test.bam
-or 
-bash CRIS.sh -inbam /path/SRR1814049_test.bam
+bash CRIS.sh -inbam /fullPath/SRR1814049_test.bam -outdir /fullPath/
 ```
 
 ### Output files
