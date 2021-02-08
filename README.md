@@ -14,30 +14,23 @@ cd CRIS/ # run CRIS from this directory
 ### Dependencies
 
 ```
-  - picard (v2.20.3)
-  - trinity (v2.1.1)
-  - blast (v2.9.0)
-  - seqkit (v0.12.0)
-  - sambamba (v0.7.0)
-  - salmon (v0.8.1)
-  - igblast (v1.14.0)
+  - picard
+  - trinity
+  - blast 
+  - seqkit 
+  - sambamba 
+  - salmon 
+  - igblast
 ```
 
-Executables must be accessible from user's PATH. CRIS has been tested on the software versions indicated.
-
-### Installation of dependencies using conda
-
-```
-conda env create --file environment.yml --force
-conda activate cris_env
-```
+Executables must be accessible from user's PATH. 
 
 ### Usage
 
 ```
 bash CRIS.sh -h
 
-Construction of IHGV transcripts from RNA-seq.
+CRIS: Complete Reconstruction of Immunoglobulin V-D-J Sequences from RNA-seq.
 
 Usage: CRIS_temp.sh -inbam <input_bam_file> -outdir <output_directory> -threads <num_threads> -memory <max_memory_assembly>
                         <input_bam_file>: bam file must be aligned to hg38 genome build, coordinate-sorted and indexed

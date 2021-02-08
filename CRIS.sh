@@ -1,6 +1,6 @@
 #!/bin/bash 
 if [ "$1" == "-h" ] ; then
-        echo -e "Construction of IHGV transcripts from RNA-seq.
+        echo -e "CRIS: Complete Reconstruction of Immunoglobulin V-D-J Sequences from RNA-seq.
 
 Usage: `basename $0` -inbam <input_bam_file> -outdir <output_directory> -threads <num_threads> -memory <max_memory_assembly>
                         <input_bam_file>: bam file must be aligned to hg38 genome build, coordinate-sorted and indexed
@@ -63,7 +63,7 @@ Trinity --seqType fq --max_memory $max_memory_assembly --left $input_bam_file_na
 # edit_imgt_file.pl IGHD.fasta > formatted_IGHD.fasta
 # edit_imgt_file.pl IGHJ.fasta > formatted_IGHJ.fasta
 
-# #make balst database
+# #make blast database
 # makeblastdb -in formatted_IGHV.fasta -dbtype nucl -parse_seqids -out IGHV
 # makeblastdb -in formatted_IGHD.fasta -dbtype nucl -parse_seqids -out IGHD
 # makeblastdb -in formatted_IGHJ.fasta -dbtype nucl -parse_seqids -out IGHJ
