@@ -100,7 +100,7 @@ less $f | seqkit grep -p $line;
 done <list >>$input_bam_file_name.ig-transcripts.sortedbyTPM.fasta
 
 # igblastn for SHM and clonotypes
-igblastn -germline_db_V ../data/IGHV -num_alignments_V 1 -germline_db_J ../data/IGHJ -num_alignments_J 1 -germline_db_D ../data/IGHD -num_alignments_D 1 -organism human -query $input_bam_file_name.ig-transcripts.sortedbyTPM.fasta -show_translation -auxiliary_data ../data/human_gl.aux >$input_bam_file_name.IgBLAST_out.txt
+igblastn -germline_db_V ../data/IGHV -num_alignments_V 3 -germline_db_J ../data/IGHJ -num_alignments_J 3 -germline_db_D ../data/IGHD -num_alignments_D 3 -organism human -query $input_bam_file_name.ig-transcripts.sortedbyTPM.fasta -show_translation -auxiliary_data ../data/human_gl.aux >$input_bam_file_name.IgBLAST_out.txt
 
 #copy all files to the outdir
 cp $input_bam_file_name*txt $output_directory
