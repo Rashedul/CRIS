@@ -33,8 +33,8 @@ bash CRIS.sh -h
 CRIS: Complete Reconstruction of Immunoglobulin V-D-J Sequences from RNA-seq.
 
 Usage: CRIS.sh -inbam <input_bam_file> -outdir <output_directory> -threads <num_threads> -memory <max_memory_assembly>
-                        <input_bam_file>: bam file must be aligned to hg38 genome build, coordinate-sorted and indexed
-                        <output_directory>: path of the output directory
+                        <input_bam_file>: (required) bam file must be aligned to hg38 genome build, coordinate-sorted and indexed
+                        <output_directory>: (required) path of the output directory
                         <num_threads>: (optional) number of threads; default 4
                         <max_memory_assembly>: (optional) maximum memory in G (gigabyte) allowed for assembly; default 4G
 ```
@@ -49,6 +49,8 @@ IGHV status for SRR1814049 (US-1422278) using Sanger sequencing:
 * Percent identity: 94.6
 
 ```
+bash CRIS.sh -inbam ../SRR1814049_test.bam -outdir /fullPath/
+or,
 bash CRIS.sh -inbam /fullPath/SRR1814049_test.bam -outdir /fullPath/
 ```
 
