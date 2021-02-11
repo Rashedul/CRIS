@@ -21,9 +21,10 @@ cd CRIS/ # run CRIS from this directory
   - sambamba (v0.7.0)
   - salmon (v0.8.1)
   - igblast (v1.14.0)
+  - jellyfish (v2.2.10)
 ```
 
-Executables must be accessible from user's PATH. CRIS has been tested on the software versions indicated.
+Executables must be accessible from user's PATH. 
 
 ### Usage
 
@@ -49,6 +50,7 @@ IGHV status for SRR1814049 (US-1422278) using Sanger sequencing:
 * Percent identity: 94.6
 
 ```
+#run from CRIS directory
 bash CRIS.sh -inbam ../SRR1814049_test.bam 
 or,
 bash CRIS.sh -inbam /fullPath/SRR1814049_test.bam -outdir /fullPath/
