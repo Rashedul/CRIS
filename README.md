@@ -14,16 +14,16 @@ cd CRIS/ # run CRIS from this directory
 ### Dependencies
 
 ```
-  - picard
-  - trinity
-  - blast 
-  - seqkit 
-  - sambamba 
-  - salmon 
-  - igblast
+  - picard (v2.20.3)
+  - trinity (v2.1.1)
+  - blast (v2.9.0)
+  - seqkit (v0.12.0)
+  - sambamba (v0.7.0)
+  - salmon (v0.8.1)
+  - igblast (v1.14.0)
 ```
 
-Executables must be accessible from user's PATH. 
+Executables must be accessible from user's PATH. CRIS has been tested on the software versions indicated.
 
 ### Usage
 
