@@ -3,8 +3,8 @@ if [ "$1" == "-h" ] ; then
         echo -e "CRIS: Complete Reconstruction of Immunoglobulin V-D-J Sequences from RNA-seq.
 
 Usage: `basename $0` -inbam <input_bam_file> -outdir <output_directory> -threads <num_threads> -memory <max_memory_assembly>
-                        <input_bam_file>: bam file must be aligned to hg38 genome build, coordinate-sorted and indexed
-                        <output_directory>: path of the output directory
+                        <input_bam_file>: (required) bam file must be aligned to hg38 genome build, coordinate-sorted and indexed
+                        <output_directory>: (optional) full path of output directory or output files will be written in current directory
                         <num_threads>: (optional) number of threads; default 4
                         <max_memory_assembly>: (optional) maximum memory in G (gigabyte) allowed for assembly; default 4G"
 exit 0
@@ -13,6 +13,7 @@ fi
 #set defaults
 num_threads=4
 max_memory_assembly=4G
+output_directory=../
 
 while [ $# -gt 0 ]
 do
