@@ -1,6 +1,0 @@
-[2021-02-12 12:00:46.384] [jointLog] [info] setting maxHashResizeThreads to 4
-[2021-02-12 12:00:46.384] [jointLog] [info] Fragment incompatibility prior below threshold.  Incompatible fragments will be ignored.
-[2021-02-12 12:00:46.384] [jointLog] [info] Usage of --validateMappings implies use of minScoreFraction. Since not explicitly specified, it is being set to 0.65
-[2021-02-12 12:00:46.384] [jointLog] [info] Setting consensusSlack to selective-alignment default of 0.35.
-[2021-02-12 12:00:46.384] [jointLog] [info] parsing read library format
-[2021-02-12 12:00:46.384] [jointLog] [info] There is 1 library.
