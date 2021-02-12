@@ -48,7 +48,7 @@ picard SamToFastq I=$input_bam_file_name.slice.bam F=$input_bam_file_name.slice.
 printf "Trinity is constructing de novo transcripts...\n\n"
 
 #trinity de novo assembly
-Trinity --seqType fq --max_memory $max_memory_assembly --left $input_bam_file_name.slice.R1.fastq --right $input_bam_file_name.slice.R2.fastq --CPU $num_threads --trimmomatic --full_cleanup;
+Trinity --seqType fq --max_memory $max_memory_assembly --left $input_bam_file_name.slice.R1.fastq --right $input_bam_file_name.slice.R2.fastq --CPU $num_threads --trimmomatic --full_cleanup --no_bowtie;
 
 #######################################################################
 #                  make blast db for igh sequences                    #
