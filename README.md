@@ -51,7 +51,7 @@ IGHV status for SRR1814049 (US-1422278) using Sanger sequencing:
 
 ```
 #run from CRIS directory
-bash CRIS.sh -inbam ../SRR1814049_test.bam 
+bash CRIS.sh -inbam SRR1814049_test.bam 
 or,
 bash CRIS.sh -inbam /fullPath/SRR1814049_test.bam -outdir /fullPath/
 ```

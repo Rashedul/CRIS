@@ -31,17 +31,18 @@ done
 ###############################################################
 input_bam_file_name=$(basename $input_bam_file)
 mkdir -p CRIS_out.$input_bam_file_name
-cd CRIS_out.$input_bam_file_name
 
 #hg38 ig coordinates
 echo "chr14   105600001       106880000
 chr14_KI270726v1_random 0       43739
 chr15   21710000        22190000
 chr16   31950001        33970000
-chr16_KI270728v1_random 0       1872759" >Ig_regions.bed
+chr16_KI270728v1_random 0       1872759" >CRIS_out.$input_bam_file_name/Ig_regions.bed
 
 #slice bam by regions of interest. For slice, input file must be coordinate-sorted and indexed
-sambamba slice $input_bam_file -L Ig_regions.bed -o $input_bam_file_name.slice.bam
+sambamba slice $input_bam_file -L CRIS_out.$input_bam_file_name/Ig_regions.bed -o CRIS_out.$input_bam_file_name/$input_bam_file_name.slice.bam
+
+cd CRIS_out.$input_bam_file_name
 picard SamToFastq I=$input_bam_file_name.slice.bam F=$input_bam_file_name.slice.R1.fastq F2=$input_bam_file_name.slice.R2.fastq
 
 printf "Trinity is constructing de novo transcripts...\n\n"
