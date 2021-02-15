@@ -4,13 +4,6 @@ CRIS reconstructs entire *IGHV* gene to identify somatic hypermutation status in
 
 * Operating System: Linux
 
-### Download the repository
-
-```
-git clone https://github.com/Rashedul/CRIS
-cd CRIS/ # run CRIS from this directory 
-```
-
 ### Dependencies
 
 ```
@@ -24,7 +17,18 @@ cd CRIS/ # run CRIS from this directory
   - jellyfish (v2.2.10)
 ```
 
-Executables must be accessible from user's PATH. 
+Executables must be accessible from user's PATH. CRIS requires these specific versions of dependencies.
+
+### Download repository and installing dependencies
+
+```
+git clone https://github.com/Rashedul/CRIS
+cd CRIS/ # run CRIS from this directory 
+
+#installing dependencies using conda
+conda create --name cris_env --file environment.txt
+conda activate cris_env 
+```
 
 ### Usage
 
