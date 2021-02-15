@@ -19,7 +19,7 @@ CRIS reconstructs entire *IGHV* gene to identify somatic hypermutation status in
 
 Executables must be accessible from user's PATH. CRIS requires these specific versions of dependencies.
 
-### Download repository and installing dependencies
+### Download CRIS and install dependencies
 
 ```
 git clone https://github.com/Rashedul/CRIS
@@ -46,9 +46,9 @@ Usage: CRIS.sh -inbam <input_bam_file> -outdir <output_directory> -threads <num_
 
 ### Test run
 
-**NOTE:** bam file must be aligned to the hg38 genome build, coordinate-sorted and indexed. This pipeline is tested for BWA and STAR alignment of paired-end RNA-seq reads. 
+**NOTE:** bam file must be aligned to the hg38 genome build, coordinate-sorted and indexed. 
  
-IGHV status for SRR1814049 (US-1422278) using Sanger sequencing:
+IGHV status for SRR1814049 (US-1422278) using Sanger sequencing: 
 
 * IGHV gene: IGHV3-74
 * Percent identity: 94.6
@@ -63,11 +63,11 @@ bash CRIS.sh -inbam /fullPath/SRR1814049_test.bam -outdir /fullPath/
 ### Output files
 
 ```
+`SRR1814049_test.bam.IgBLAST_out.txt` contains the percent identity and alignment between Ig-transcript and top germline V gene hits.
+
 `SRR1814049_test.bam.ig-transcripts.sortedbyTPM.fasta` contains Ig-transcript fasta sequences ordered by expression (TPM) values. 
 
 `SRR1814049_test.bam.ig-transcripts.sortedbyTPM.txt` contains Ig-transcript sequence IDs and expression values.
-
-`SRR1814049_test.bam.IgBLAST_out.txt` contains the percent identity and alignment between Ig-transcript and top germline V gene hit.
 ```
 
 ### License 
