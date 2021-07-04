@@ -19,7 +19,6 @@ echo "print ig regions"
 cat Ig_regions.bed | head
 
 #slice bam by regions of interest. For slice, input file must be coordinate-sorted and indexed
-#sambamba -h
 
 input_bam_file_name="${1}"
 ls -l $input_bam_file_name
@@ -41,25 +40,6 @@ ls -l $input_bam_file_name.slice.R2.fastq
 
 Trinity --seqType fq --max_memory $max_memory_assembly --left $input_bam_file_name.slice.R1.fastq --right $input_bam_file_name.slice.R2.fastq --CPU $num_threads --trimmomatic --full_cleanup --no_bowtie;
 
-#######################################################################
-#                  make blast db for igh sequences                    #
-#######################################################################
-
-# # download germline IGHV sequences from IMGT 
-# cd ../data
-# curl -O http://www.imgt.org/download/V-QUEST/IMGT_V-QUEST_reference_directory/Homo_sapiens/IG/IGHV.fasta
-# curl -O http://www.imgt.org/download/V-QUEST/IMGT_V-QUEST_reference_directory/Homo_sapiens/IG/IGHD.fasta
-# curl -O http://www.imgt.org/download/V-QUEST/IMGT_V-QUEST_reference_directory/Homo_sapiens/IG/IGHJ.fasta
-
-# # modify IMGT fasta for blast compatibility
-# edit_imgt_file.pl IGHV.fasta > formatted_IGHV.fasta
-# edit_imgt_file.pl IGHD.fasta > formatted_IGHD.fasta
-# edit_imgt_file.pl IGHJ.fasta > formatted_IGHJ.fasta
-
-# #make blast database
-# makeblastdb -in formatted_IGHV.fasta -dbtype nucl -parse_seqids -out IGHV
-# makeblastdb -in formatted_IGHD.fasta -dbtype nucl -parse_seqids -out IGHD
-# makeblastdb -in formatted_IGHJ.fasta -dbtype nucl -parse_seqids -out IGHJ
 
 #######################################################################
 #  filter IGHV transcripts and identify highly expressed transcripts  #
