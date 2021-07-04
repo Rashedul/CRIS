@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 #set defaults
-num_threads=4
+num_threads=3
 max_memory_assembly=8G
 
 ###############################################################
@@ -77,5 +77,6 @@ igblastn -germline_db_V ./data/IGHV -num_alignments_V 3 -germline_db_J ./data/IG
 
 head $input_bam_file_name*txt
 head $input_bam_file_name*fasta
+cat *IgBLAST_out.txt
 
 printf "#### finished job...\n\n"
