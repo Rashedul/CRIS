@@ -2,48 +2,41 @@
 
 CRIS reconstructs entire *IGHV* gene to identify somatic hypermutation status in chronic lymphocytic leukemia using RNA-seq. CRIS has been validated against PCR-Sanger based clinical data for somatic hypermutations in CLL.
 
-### Docker container
+### CRIS in Docker container
+
+* Minimum 16GB memory and 4 CPUs are required
+
+Build and run docker image
 
 ```
+# download
 git clone https://github.com/Rashedul/CRIS
 cd CRIS/ # run CRIS from this directory 
 
-#
+# build docker image
 sudo docker build --tag app:v1 . 
+
+# run CRIS using test bam file. bam file must be aligned to the hg38 genome build and coordinate-sorted.
 sudo docker run -v $PWD/SRR1814049_test.bam:/app/SRR1814049_test.bam -t app:v1 bash CRIS_docker.sh SRR1814049_test.bam
+
 ```
+
+### CRIS in bash 
 
 * Operating System: Linux
-
-### Dependencies
-
-```
-  - picard (v2.20.3)
-  - trinity (v2.1.1)
-  - blast (v2.9.0)
-  - seqkit (v0.12.0)
-  - sambamba (v0.7.0)
-  - salmon (v0.8.1)
-  - igblast (v1.14.0)
-  - jellyfish (v2.2.10)
-```
-
-Executables must be accessible from user's PATH. CRIS requires these specific versions of dependencies.
-
-### Download CRIS and install dependencies
+* Executables must be accessible from user's PATH. CRIS requires these specific versions of dependencies
+* Install dependencies using conda environment
 
 ```
+# download
 git clone https://github.com/Rashedul/CRIS
 cd CRIS/ # run CRIS from this directory 
 
 #installing dependencies using conda
 conda create --name cris_env --file environment.txt
 conda activate cris_env 
-```
 
-### Usage
-
-```
+# usage
 bash CRIS.sh -h
 
 CRIS: Complete Reconstruction of Immunoglobulin V-D-J Sequences from RNA-seq.
@@ -53,27 +46,24 @@ Usage: CRIS.sh -inbam <input_bam_file> -outdir <output_directory> -threads <num_
                         <output_directory>: (optional) full path of output directory or output files will be written in current directory
                         <num_threads>: (optional) number of threads; default 4
                         <max_memory_assembly>: (optional) maximum memory in G (gigabyte) allowed for assembly; default 4G
-```
 
-### Test run
-
-**NOTE:** bam file must be aligned to the hg38 genome build, coordinate-sorted and indexed. 
- 
-IGHV status for SRR1814049 (US-1422278) using Sanger sequencing: 
-
-* IGHV gene: IGHV3-74
-* Percent identity: 94.6
-
-```
-#run from CRIS directory
+# test run from CRIS directory. bam file must be aligned to the hg38 genome build, coordinate-sorted and indexed.
 bash CRIS.sh -inbam SRR1814049_test.bam 
 or,
 bash CRIS.sh -inbam /fullPath/SRR1814049_test.bam -outdir /fullPath/
-```
-
-### Output files
 
 ```
+
+### Output 
+
+```
+# expected mutational status 
+
+- IGHV gene: IGHV3-74
+- Percent identity: 94.6
+
+# output files
+
 `SRR1814049_test.bam.IgBLAST_out.txt` contains the percent identity and alignment between Ig-transcript and top germline V gene hits.
 
 `SRR1814049_test.bam.ig-transcripts.sortedbyTPM.fasta` contains Ig-transcript fasta sequences ordered by expression (TPM) values. 
