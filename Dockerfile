@@ -2,8 +2,8 @@ FROM ubuntu:20.04
 
 WORKDIR /app
 
-COPY environment.txt CRIS_docker.sh main.sh . 
-
+COPY environment.txt .
+COPY CRIS_docker.sh .
 COPY data ./data 
 
 # Install miniconda
