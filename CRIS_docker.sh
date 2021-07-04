@@ -70,7 +70,7 @@ printf "Filtering IGHV transcripts using blastn...\n\n"
 #filter IGHV sequnces by blastn 
 f=*Trinity.fasta
 #get transcript ids having match with ig-genes by blastn
-blastn -db ../data/IGHV -query $f -out $input_bam_file_name"_blastn" -num_threads $num_threads -outfmt 6;
+blastn -db ./data/IGHV -query $f -out $input_bam_file_name"_blastn" -num_threads $num_threads -outfmt 6;
 #remove duplicated ids
 cat $input_bam_file_name"_blastn" | awk '!seen[$1]++' | awk '{print $1}' > $input_bam_file_name"_blastn_HG_IG_remdup.ID"
 #filter transcript fasta file by transcript id
@@ -93,7 +93,7 @@ cat $f | seqkit grep -p $line;
 done <list >>$input_bam_file_name.ig-transcripts.sortedbyTPM.fasta
 
 # igblastn for SHM and clonotypes
-igblastn -germline_db_V ../data/IGHV -num_alignments_V 3 -germline_db_J ../data/IGHJ -num_alignments_J 3 -germline_db_D ../data/IGHD -num_alignments_D 3 -organism human -query $input_bam_file_name.ig-transcripts.sortedbyTPM.fasta -show_translation -auxiliary_data ../data/human_gl.aux >$input_bam_file_name.IgBLAST_out.txt
+igblastn -germline_db_V ./data/IGHV -num_alignments_V 3 -germline_db_J ./data/IGHJ -num_alignments_J 3 -germline_db_D ./data/IGHD -num_alignments_D 3 -organism human -query $input_bam_file_name.ig-transcripts.sortedbyTPM.fasta -show_translation -auxiliary_data ./data/human_gl.aux >$input_bam_file_name.IgBLAST_out.txt
 
 head $input_bam_file_name*txt
 head $input_bam_file_name*fasta
