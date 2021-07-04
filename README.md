@@ -2,6 +2,17 @@
 
 CRIS reconstructs entire *IGHV* gene to identify somatic hypermutation status in chronic lymphocytic leukemia using RNA-seq. CRIS has been validated against PCR-Sanger based clinical data for somatic hypermutations in CLL.
 
+### Docker container
+
+```
+git clone https://github.com/Rashedul/CRIS
+cd CRIS/ # run CRIS from this directory 
+
+#
+sudo docker build --tag app:v1 . 
+sudo docker run -v $PWD/SRR1814049_test.bam:/app/SRR1814049_test.bam -t app:v1 bash CRIS_docker.sh SRR1814049_test.bam
+```
+
 * Operating System: Linux
 
 ### Dependencies
