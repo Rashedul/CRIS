@@ -24,6 +24,7 @@ sudo docker run -v $PWD/SRR1814049_test.bam:/app/SRR1814049_test.bam -t app:v1 b
 ### CRIS in bash 
 
 * Operating System: Linux
+* Dependencies: ```picard (v2.20.3), trinity (v2.1.1), blast (v2.9.0), seqkit (v0.12.0), sambamba (v0.7.0), salmon (v0.8.1), igblast (v1.14.0), jellyfish (v2.2.10)```
 * Executables must be accessible from user's PATH. CRIS requires these specific versions of dependencies
 * Install dependencies using conda environment
 
