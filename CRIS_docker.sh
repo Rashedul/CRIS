@@ -1,8 +1,8 @@
 #!/bin/bash 
 
 #set defaults
-num_threads=3
-max_memory_assembly=8G
+num_threads=4
+max_memory_assembly=16G
 
 ###############################################################
 # Slice bam; PE bam to fastq; de novo assembly of transcripts #
