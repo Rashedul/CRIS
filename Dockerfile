@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 
-WORKDIR /app
+WORKDIR /cris
 
 COPY environment.txt .
 COPY CRIS_docker.sh .

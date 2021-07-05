@@ -8,7 +8,6 @@ max_memory_assembly=8G
 # Slice bam; PE bam to fastq; de novo assembly of transcripts #
 ###############################################################
 #hg38 ig coordinates
-#echo "chr14   105600001       105605000
 echo "chr14   105600001       106880000
 chr14_KI270726v1_random 0       43739
 chr15   21710000        22190000
