@@ -4,7 +4,7 @@ CRIS reconstructs entire *IGHV* gene to identify somatic hypermutation status in
 
 ### CRIS in Docker container
 
-* Minimum 16GB memory and 4 CPUs are required to be used by the container
+* Minimum 16GB memory and 4 threads are required to be used by the container
 
 Build and run docker image
 
@@ -16,7 +16,7 @@ cd CRIS/ # run CRIS from this directory
 # build docker image
 sudo docker build --tag cris:v1 . 
 
-# run CRIS using test bam file. bam file must be aligned to the hg38 genome build and coordinate-sorted.
+# run CRIS using test bam file. bam file must be aligned to the hg38 genome build and coordinate-sorted. 4 threads and 16G memory is added as default.
 sudo docker run -v $PWD/SRR1814049_test.bam:/cris/SRR1814049_test.bam -t cris:v1 bash CRIS_docker.sh SRR1814049_test.bam 4 16G
 
 ```
