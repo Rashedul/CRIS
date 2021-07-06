@@ -9,7 +9,8 @@ max_memory_assembly="${3}" #e.g., 16G
 # Slice bam; PE bam to fastq; de novo assembly of transcripts #
 ###############################################################
 
-# hg38 ig coordinates
+#hg38 ig coordinates
+#echo "chr14   106780442       106831131
 echo "chr14   105600001       106880000
 chr14_KI270726v1_random 0       43739
 chr15   21710000        22190000
@@ -19,16 +20,14 @@ chr16_KI270728v1_random 0       1872759" >Ig_regions.bed
 echo "print ig regions"
 cat Ig_regions.bed | head
 
-# slice bam by regions of interest. For slice, input file must be coordinate-sorted and indexed
+#slice bam by regions of interest. For slice, input file must be coordinate-sorted and indexed
 sambamba index $input_bam_file_name
 sambamba slice $input_bam_file_name -L Ig_regions.bed -o $input_bam_file_name.slice.bam
 sambamba flagstat $input_bam_file_name.slice.bam
 
 picard SamToFastq I=$input_bam_file_name.slice.bam F=$input_bam_file_name.slice.R1.fastq F2=$input_bam_file_name.slice.R2.fastq
 
-ls -lh *
-
-printf "\n\n Trinity is constructing de novo transcripts...\n\n"
+printf "Trinity is constructing de novo transcripts...\n\n"
 
 #trinity de novo assembly
 ls -l $input_bam_file_name.slice.R1.fastq
@@ -70,11 +69,14 @@ done <list >>$input_bam_file_name.ig-transcripts.sortedbyTPM.fasta
 # igblastn for SHM and clonotypes
 igblastn -germline_db_V ./data/IGHV -num_alignments_V 3 -germline_db_J ./data/IGHJ -num_alignments_J 3 -germline_db_D ./data/IGHD -num_alignments_D 3 -organism human -query $input_bam_file_name.ig-transcripts.sortedbyTPM.fasta -show_translation -auxiliary_data ./data/human_gl.aux >$input_bam_file_name.IgBLAST_out.txt
 
-rm *slice* *blastn* list SRR1814049_test.bam SRR1814049_test.bam.bai
+rm *slice* *blastn* list *.bam *.bam.bai *Trinity.fasta *bed 
 rm -r salmon_index
+rm -r data
 
-head $input_bam_file_name*txt
-head $input_bam_file_name*fasta
+cat *ig-transcripts.sortedbyTPM.txt
+cat *ig-transcripts.sortedbyTPM.fasta
 cat *IgBLAST_out.txt
+
+ls -l *
 
 printf "\n\n #### finished job...\n\n"
