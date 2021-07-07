@@ -17,7 +17,7 @@ cd CRIS/ # run CRIS from this directory
 sudo docker build --tag cris:v1 . 
 
 # run CRIS using test bam file. bam file must be aligned to the hg38 genome build and coordinate-sorted. 4 threads and 16G memory is added as default
-sudo docker run --name cris_analysis -v $PWD/SRR1814049_test.bam:/cris/SRR1814049_test.bam -t cris:v1 bash CRIS_docker.sh SRR1814049_test.bam 4 16G
+sudo docker run --name cris_analysis -v /fullPath/SRR1814049_test.bam:/cris/SRR1814049_test.bam -t cris:v1 bash CRIS_docker.sh SRR1814049_test.bam 4 16G
 
 # export docker container to local path. Output is stored within cris directory
 sudo docker export cris_analysis > cris_analysis_container.tar
