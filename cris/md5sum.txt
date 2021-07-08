@@ -1,0 +1,3 @@
+75165ba38a95d33c0557d1ed31268174  SRR1814049_test.bam.ig-transcripts.sortedbyTPM.fasta
+6ef3be4f3f2593e45019d1c6f36b9cd6  SRR1814049_test.bam.ig-transcripts.sortedbyTPM.txt
+452e765c4fe16ab50c8990140d1fb053  SRR1814049_test.bam.IgBLAST_out.txt
