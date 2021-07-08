@@ -1,12 +1,12 @@
 ### CRIS: Complete Reconstruction of Immunoglobulin V-D-J Sequences from RNA-seq 
 
-CRIS reconstructs entire *IGHV* gene to identify somatic hypermutation status in chronic lymphocytic leukemia using RNA-seq. CRIS has been validated against PCR-Sanger based clinical data for somatic hypermutations in CLL.
+CRIS reconstructs the immunoglobulin heavy chain variable region *IGHV* gene, enumerates single nucleotide variants and predicts hypermutation status from RNA-seq datasets. Both ribodepleted and polyA selected RNA-seq datasets are appropriate with a minimum of 25M sequence reads per sample. CRIS has been validated against clinical PCR-Sanger based hypermutation classification in the context of Chronic Lymphocytic Leukemia.
 
 ### CRIS in Docker container
 
-* Minimum 16GB memory and 4 threads are required to be used by the container
+* A minimum of 16GB RAM and 4 threads are required to run the CRIS container
 
-Build and run docker image
+Build and run docker image 
 
 ```
 # download
@@ -16,10 +16,10 @@ cd CRIS/ # run CRIS from this directory
 # build docker image
 sudo docker build --tag cris:v1 . 
 
-# run CRIS using test bam file. bam file must be aligned to the hg38 genome build and coordinate-sorted. 4 threads and 16G memory is added as default
-sudo docker run --name cris_analysis -v /fullPath/SRR1814049_test.bam:/cris/SRR1814049_test.bam -t cris:v1 bash CRIS_docker.sh SRR1814049_test.bam 4 16G
+# to confirm install please run CRIS using the supplied test bam file (SRR1814049_test.bam) that has been aligned to hg38 (GRCh38) build and coordinate-sorted using SAMBAMBA sort. As mentioned 4 threads and 16G RAM is allocated by CRIS by default.
+sudo docker run --name cris_analysis -v /fullPath/SRR1814049_test.bam:/cris/SRR1814049_test.bam -t cris:v1 bash CRIS_docker.sh SRR1814049_test.bam 4 16G 
 
-# export docker container to local path. Output is stored within cris directory
+# export docker container to local path, output is stored within cris directory.
 sudo docker export cris_analysis > cris_analysis_container.tar
 
 ```
@@ -80,4 +80,3 @@ This project is licensed under the [MIT license](https://github.com/Rashedul/CRI
 ### Contact 
 
 Rashedul Islam (rashed1 (at) student.ubc.ca)
-
