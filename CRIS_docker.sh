@@ -2,8 +2,8 @@
 
 # input parameters
 input_bam_file_name="${1}" #bam file name
-num_threads="${2}" #e.g., 4
-max_memory_assembly="${3}" #e.g., 16G
+num_threads=$(echo "${2}" | tr "=" "\t" | awk '{print $2}') #e.g., threads=4
+max_memory_assembly=$(echo "${3}" | tr "=" "\t" | awk '{print $2}') #e.g., memory=16G
 
 ###############################################################
 # Slice bam; PE bam to fastq; de novo assembly of transcripts #
