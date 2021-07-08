@@ -10,7 +10,6 @@ max_memory_assembly=$(echo "${3}" | tr "=" "\t" | awk '{print $2}') #e.g., memor
 ###############################################################
 
 #hg38 ig coordinates
-#echo "chr14   106780442       106831131
 echo "chr14   105600001       106880000
 chr14_KI270726v1_random 0       43739
 chr15   21710000        22190000
@@ -69,12 +68,12 @@ done <list >>$input_bam_file_name.ig-transcripts.sortedbyTPM.fasta
 # igblastn for SHM and clonotypes
 igblastn -germline_db_V ./data/IGHV -num_alignments_V 3 -germline_db_J ./data/IGHJ -num_alignments_J 3 -germline_db_D ./data/IGHD -num_alignments_D 3 -organism human -query $input_bam_file_name.ig-transcripts.sortedbyTPM.fasta -show_translation -auxiliary_data ./data/human_gl.aux >$input_bam_file_name.IgBLAST_out.txt
 
-rm *slice* *blastn* list *.bam *.bam.bai *Trinity.fasta *bed 
+rm *slice* *blastn* list *.bam *.bam.bai *Trinity.fasta *bed environment.txt
 rm -r salmon_index
 rm -r data
 
-cat *ig-transcripts.sortedbyTPM.txt
 cat *ig-transcripts.sortedbyTPM.fasta
+cat *ig-transcripts.sortedbyTPM.txt
 cat *IgBLAST_out.txt
 
 ls -l *
