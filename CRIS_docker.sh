@@ -3,7 +3,7 @@
 # check 3 required arguments are provided
 if [ -z "$3" ]
   then
-    echo "ERROR: Parameters are not supplied, please provide a bam file, number of threads and memory."
+    echo "ERROR: Parameters are not supplied in CRIS, please provide a bam file, number of threads and memory."
     exit 1
 fi
 
@@ -12,7 +12,7 @@ if [ -f "$1" ]
 then
 	echo "CRIS is runnig..."
 else 
-	echo "ERROR: can't find bam file"
+	echo "ERROR: CRIS can't find bam file"
 	exit 1
 fi
 
