@@ -1,5 +1,21 @@
 #!/bin/bash 
 
+# check 3 required arguments are provided
+if [ -z "$3" ]
+  then
+    echo "ERROR: Parameters are not supplied, please provide a bam file, number of threads and memory."
+    exit 1
+fi
+
+# check argument $1 is a file
+if [ -f "$1" ] 
+then
+	echo "CRIS is runnig..."
+else 
+	echo "ERROR: can't find bam file"
+	exit 1
+fi
+
 # input parameters
 input_bam_file_name="${1}" #bam file name
 num_threads=$(echo "${2}" | tr "=" "\t" | awk '{print $2}') #e.g., threads=4
