@@ -20,7 +20,7 @@ sudo docker build --tag cris:v1 .
 sudo docker run --name cris_analysis -v /fullPath/SRR1814049_test.bam:/cris/SRR1814049_test.bam -t cris:v1 bash CRIS_docker.sh SRR1814049_test.bam threads=4 memory=16G 
 
 # copy output files to local path
-docker cp cris_analysis:cris/ .
+sudo docker cp cris_analysis:cris/ .
 
 # export docker container to local path, output is stored within cris directory.
 sudo docker export cris_analysis > cris_analysis_container.tar
