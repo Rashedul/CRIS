@@ -2,7 +2,7 @@
 
 CRIS reconstructs the immunoglobulin heavy chain variable region *IGHV* gene, enumerates single nucleotide variants and predicts hypermutation status from RNA-seq datasets. Both ribodepleted and polyA selected RNA-seq datasets are appropriate with a minimum of 25M sequence reads per sample. CRIS has been validated against clinical PCR-Sanger based hypermutation classification in the context of Chronic Lymphocytic Leukemia.
 
-### CRIS in [Docker](https://docs.docker.com/) container
+### CRIS in [Docker](https://docs.docker.com/) container 
 
 * A minimum of 16GB RAM and 4 threads are required to run the CRIS container
 
