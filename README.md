@@ -61,6 +61,9 @@ bash CRIS.sh -inbam /fullPath/SRR1814049_test.bam -outdir /fullPath/
 
 ### Output 
 
+[Example output files are here.](https://github.com/Rashedul/CRIS/tree/main/data/output_examples)
+
+
 ```
 # expected mutational status for test run 
 
@@ -69,7 +72,7 @@ bash CRIS.sh -inbam /fullPath/SRR1814049_test.bam -outdir /fullPath/
 
 # output files
 
-- [SRR1814049_test.bam.IgBLAST_out.txt](./data/output_examples/SRR1814049_test.bam.IgBLAST_out.txt)
+- SRR1814049_test.bam.IgBLAST_out.txt
 Contains the percent identity and alignment between Ig-transcript and top germline IGHV gene hits.
 
 - SRR1814049_test.bam.ig-transcripts.sortedbyTPM.txt 
