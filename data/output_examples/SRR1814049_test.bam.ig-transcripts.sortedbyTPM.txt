@@ -1,0 +1,2 @@
+#Name    Length  EffectiveLength TPM     NumReads
+TRINITY_DN1_c0_g1_i1	619	421.317	1e+06	3695

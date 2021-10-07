@@ -69,13 +69,13 @@ bash CRIS.sh -inbam /fullPath/SRR1814049_test.bam -outdir /fullPath/
 
 # output files
 
-- SRR1814049_test.bam.IgBLAST_out.txt (md5sum: 452e765c4fe16ab50c8990140d1fb053)
+- [SRR1814049_test.bam.IgBLAST_out.txt](./data/output_examples/SRR1814049_test.bam.IgBLAST_out.txt)
 Contains the percent identity and alignment between Ig-transcript and top germline IGHV gene hits.
 
-- SRR1814049_test.bam.ig-transcripts.sortedbyTPM.txt (md5sum: 6ef3be4f3f2593e45019d1c6f36b9cd6) 
+- SRR1814049_test.bam.ig-transcripts.sortedbyTPM.txt 
 Contains Ig-transcript sequence IDs and sorted by expression (TPM) values.
 
-- SRR1814049_test.bam.ig-transcripts.sortedbyTPM.fasta (md5sum: 75165ba38a95d33c0557d1ed31268174)
+- SRR1814049_test.bam.ig-transcripts.sortedbyTPM.fasta 
 Contains Ig-transcript fasta sequences sorted by expression (TPM) values. 
 
 ```
