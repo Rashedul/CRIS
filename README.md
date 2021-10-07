@@ -61,7 +61,7 @@ bash CRIS.sh -inbam /fullPath/SRR1814049_test.bam -outdir /fullPath/
 
 ### Output 
 
-[Example output files are here.](https://github.com/Rashedul/CRIS/tree/main/data/output_examples)
+* [Example output files are here.](https://github.com/Rashedul/CRIS/tree/main/data/output_examples)
 
 
 ```
