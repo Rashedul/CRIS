@@ -91,4 +91,4 @@ Rashedul Islam (rashedul.islam@alumni.ubc.ca)
 
 ### Publication 
 
-Rashedul Islam, Misha Bilenky, Andrew P Weng, Joseph M Connors, Martin Hirst. [CRIS: Complete Reconstruction of Immunoglobulin V-D-J Sequences from RNA-seq data](https://academic.oup.com/bioinformaticsadvances/advance-article/doi/10.1093/bioadv/vbab021/6367791?login=true). Bioinformatics Advances, vbab021, September 2021.
+Rashedul Islam, Misha Bilenky, Andrew P. Weng, Joseph M. Connors, Martin Hirst. [CRIS: Complete Reconstruction of Immunoglobulin V-D-J Sequences from RNA-seq data](https://academic.oup.com/bioinformaticsadvances/advance-article/doi/10.1093/bioadv/vbab021/6367791?login=true). *Bioinformatics Advances*, vbab021, September 2021.
