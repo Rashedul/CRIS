@@ -5,7 +5,7 @@ CRIS reconstructs the immunoglobulin heavy chain variable region *IGHV* gene, en
 ### Requirements
 
 * A minimum of 16GB RAM and 4 threads are required to run CRIS 
-* bam file must be aligned to hg38 (GRCh38) genome build using BWA, coordinate-sorted and indexed
+* bam file must be aligned to hg38 (GRCh38) genome build using [BWA](http://bio-bwa.sourceforge.net/), coordinate-sorted and indexed
 
 ### CRIS in [Docker](https://docs.docker.com/) container 
 
