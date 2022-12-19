@@ -92,7 +92,7 @@ This project is licensed under the [MIT license](https://github.com/Rashedul/CRI
 
 ### Contact 
 
-Rashedul Islam (rashedul.islam@alumni.ubc.ca)
+Rashedul Islam, PhD (rashedul.gen@gmail.com)
 
 
 ### Publication 
