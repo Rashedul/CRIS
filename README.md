@@ -1,6 +1,10 @@
-### CRIS: Complete Reconstruction of Immunoglobulin V-D-J Sequences from RNA-seq 
+### Classify chronic lymphocytic leukemia (CLL) patients based on IGHV status using RNA-seq 
 
-CRIS reconstructs the immunoglobulin heavy chain variable region *IGHV* gene, enumerates single nucleotide variants and predicts hypermutation status from RNA-seq datasets. Both ribodepleted and polyA selected RNA-seq datasets are appropriate with a minimum of 25M sequence reads per sample. CRIS has been validated against clinical PCR-Sanger based hypermutation classification in the context of Chronic Lymphocytic Leukemia.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Docker](https://img.shields.io/badge/Docker-Available-blue.svg)](https://docs.docker.com/)
+[![Platform](https://img.shields.io/badge/Platform-Linux-lightgrey.svg)]()
+
+CRIS (Complete Reconstruction of Immunoglobulin V-D-J Sequences) reconstructs the immunoglobulin heavy chain variable region *IGHV* gene, enumerates single nucleotide variants and predicts hypermutation status from RNA-seq datasets. Both ribodepleted and polyA selected RNA-seq datasets are appropriate with a minimum of 25M sequence reads per sample. CRIS has been validated against clinical PCR-Sanger based hypermutation classification in the context of Chronic Lymphocytic Leukemia.
 
 ### Requirements
 
